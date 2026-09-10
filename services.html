@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Athletic Services & Training Disciplines | STACKLY Sports Academy</title>
+  <meta name="description" content="Explore 9 comprehensive athletic development disciplines at STACKLY Sports Academy, including Pro Football, Strength Conditioning, Goalkeeping, and Scouting Trials.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Reading Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-emblem">
+      <div class="loader-ring"></div>
+      <span class="material-symbols-outlined loader-icon">fitness_center</span>
+    </div>
+    <div class="loader-text">STACKLY ACADEMY</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">
+          <span class="material-symbols-outlined">login</span>
+          <span>Login</span>
+        </a>
+        <a href="register.html" class="btn btn-primary btn-sm">
+          <span class="material-symbols-outlined">how_to_reg</span>
+          <span>Join Academy</span>
+        </a>
+        <button class="mobile-hamburger" aria-label="Open Mobile Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </a>
+      <a href="about.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">info</span>
+        <span>About</span>
+      </a>
+      <a href="services.html" class="mobile-drawer-link active">
+        <span class="material-symbols-outlined">sports</span>
+        <span>Services</span>
+      </a>
+      <a href="blog.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">article</span>
+        <span>Blog</span>
+      </a>
+      <a href="contact.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">alternate_email</span>
+        <span>Contact</span>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-actions">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">
+        <span class="material-symbols-outlined">login</span>
+        <span>Login to Portal</span>
+      </a>
+      <a href="register.html" class="btn btn-outline" style="width: 100%;">
+        <span class="material-symbols-outlined">person_add</span>
+        <span>Register Athlete</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: Services Hero -->
+    <section class="hero-section" style="min-height:55vh; padding-bottom:3rem;">
+      <div class="hero-bg-grid"></div>
+      <div class="container" style="position:relative; z-index:2; text-align:center; max-width:850px;">
+        <div class="section-tag">
+          <span class="material-symbols-outlined">sports</span>
+          <span>Training Disciplines</span>
+        </div>
+        <h1 class="hero-title" style="font-size:clamp(2.5rem, 6vw, 4.2rem); margin-bottom:1.2rem;">
+          SPECIALIZED <span class="glow-text">HIGH-PERFORMANCE</span> DISCIPLINES
+        </h1>
+        <p class="hero-desc" style="margin:0 auto 2rem auto;">
+          Every program is calibrated with scientific precision, integrating biomechanical feedback, individual periodization, and competitive match simulations.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: The 9 Core Services Cards -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="carousel-3d-wrapper reveal-init" id="servicesCarousel">
+
+          <div class="carousel-3d-header">
+            <div class="section-tag">
+              <span class="material-symbols-outlined">view_carousel</span>
+              <span>9 Elite Training Disciplines</span>
+            </div>
+            <div class="carousel-view-toggle" role="group" aria-label="Toggle carousel or grid view">
+              <button type="button" class="carousel-toggle-btn active" data-view="carousel">
+                <span class="material-symbols-outlined" style="font-size:17px;">3d_rotation</span>
+                <span>3D Carousel</span>
+              </button>
+              <button type="button" class="carousel-toggle-btn" data-view="grid">
+                <span class="material-symbols-outlined" style="font-size:17px;">grid_view</span>
+                <span>Grid</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="carousel-3d-stage" tabindex="0" aria-label="Training disciplines carousel. Use the left and right arrow keys to browse disciplines.">
+            <button type="button" class="carousel-3d-nav-btn prev" aria-label="Previous discipline">
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+
+          <div class="carousel-3d-track">
+          <!-- Service 1 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-1.webp" alt="Pro Football Academy" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">UEFA Syllabus</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">sports_soccer</span>
+              </div>
+              <h3 class="service-card-title">Pro Football Academy</h3>
+              <p class="service-card-desc">
+                High-intensity positional mastery, counter-pressing drills, spatial geometry on the pitch, and tactical IQ enhancement on hybrid turf pitches.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Year-Round Track</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-2.webp" alt="Strength & Conditioning" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Olympic Lab</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">fitness_center</span>
+              </div>
+              <h3 class="service-card-title">Strength & Conditioning</h3>
+              <p class="service-card-desc">
+                Velocity-based barbell lifting, posterior chain resilience, core rotation power, and personalized physiological force-plate assessments.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Custom Periodization</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-3.webp" alt="Youth Grassroots Development" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Grassroots Core</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">child_care</span>
+              </div>
+              <h3 class="service-card-title">Youth Grassroots League</h3>
+              <p class="service-card-desc">
+                Dynamic ball manipulation, bilateral balance, cognitive decision making, and sportsmanship designed for budding young athletes aged 6 to 14.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Weekend Fixtures</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-4.webp" alt="Tactical Video Analysis" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">AI Metrics</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">analytics</span>
+              </div>
+              <h3 class="service-card-title">Tactical Match Analysis</h3>
+              <p class="service-card-desc">
+                4K drone aerial coverage, individual heatmaps, pass clustering models, and interactive coaching video reviews in our multimedia theater.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Match Debriefs</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-5.webp" alt="Goalkeeping Specialist Masterclass" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Elite Goalkeeper</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">sports_handball</span>
+              </div>
+              <h3 class="service-card-title">Goalkeeper Masterclasses</h3>
+              <p class="service-card-desc">
+                Reflex diving biomechanics, cross interception, box communication, and laser-guided long distribution directed by pro goalkeeping trainers.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Ratio 4:1 Coach</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-6.webp" alt="Speed and Agility Acceleration" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Laser Timed</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">speed</span>
+              </div>
+              <h3 class="service-card-title">Speed, Agility & Quickness</h3>
+              <p class="service-card-desc">
+                Explosive first-step acceleration, curved running posture, deceleration braking, and reactive plyometric hurdles for maximum game pace.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Bi-Weekly Testing</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 7 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-7.webp" alt="Sports Nutrition & Dietetics" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Sports Fuel</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">nutrition</span>
+              </div>
+              <h3 class="service-card-title">Sports Nutrition & Dietetics</h3>
+              <p class="service-card-desc">
+                Metabolic rate testing, hydration electrolyte tracking, bespoke macronutrient meal plans, and competition-day fueling protocols.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">1-on-1 Dietitian</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 8 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-8.webp" alt="Sports Physiotherapy & Rehab" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Sports Medicine</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">medical_services</span>
+              </div>
+              <h3 class="service-card-title">Physiotherapy & Rehab</h3>
+              <p class="service-card-desc">
+                Advanced musculoskeletal rehabilitation, cryotherapy baths, localized percussion therapy, and return-to-sport testing protocols.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Full Medical Staff</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 9 -->
+          <div class="carousel-3d-card">
+            <div class="service-card-media">
+              <img src="./images/service-9.webp" alt="Tournament Scouting & Pro Trials" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Pro Exposure</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">visibility</span>
+              </div>
+              <h3 class="service-card-title">Scouting & Pro Club Trials</h3>
+              <p class="service-card-desc">
+                Exclusive showcase friendlies in front of UEFA, MLS, and international talent spotters with contract negotiation and representation advisory.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Bi-Annual Showcases</span>
+                <a href="register.html" class="card-link">
+                  <span>Enroll Slot</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          </div><!-- /carousel-3d-track -->
+
+            <button type="button" class="carousel-3d-nav-btn next" aria-label="Next discipline">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div><!-- /carousel-3d-stage -->
+
+          <div class="carousel-3d-dots" role="group" aria-label="Choose a discipline"></div>
+        </div><!-- /carousel-3d-wrapper -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: The 4-Pillar Training Methodology -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">psychology</span>
+            <span>Systematic Progression</span>
+          </div>
+          <h2 class="section-title">THE 4-PILLAR <span>TRAINING MATRIX</span></h2>
+          <p class="section-subtitle">
+            How we translate scientific methodology into unstoppable on-field athletic dominance.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">fitness_center</span>
+            <h3 class="safety-title">1. Biomechanics</h3>
+            <p class="safety-desc">Refining kinetic energy transfer, joint stabilization, and running gait economy.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">analytics</span>
+            <h3 class="safety-title">2. Tactical IQ</h3>
+            <p class="safety-desc">Real-time pitch spatial scanning, pressure anticipation, and decisive execution.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">self_improvement</span>
+            <h3 class="safety-title">3. Mindset</h3>
+            <p class="safety-desc">Adversity acclimatization, champion focus routines, and self-belief under pressure.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">health_and_safety</span>
+            <h3 class="safety-title">4. Regeneration</h3>
+            <p class="safety-desc">Active muscular recovery, cellular sleep optimization, and customized nutrition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Facilities Infrastructure -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">stadium</span>
+            <span>World-Class Arenas</span>
+          </div>
+          <h2 class="section-title">WORLD-CLASS <span>EQUIPMENT & INFRASTRUCTURE</span></h2>
+          <p class="section-subtitle">Olympic caliber training environments built to test and accelerate athletic prowess.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="arena-card reveal-init">
+            <img src="./images/gym-bg.webp" alt="High tech gym equipment" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">Weights & Power</div>
+              <h3 class="arena-name">Iron Performance Gym</h3>
+              <div class="arena-specs"><span>Olympic Standard</span><span>Eleiko Plates</span></div>
+            </div>
+          </div>
+
+          <div class="arena-card reveal-init">
+            <img src="./images/turf-pitch.webp" alt="Championship turf pitch" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">FIFA Standard</div>
+              <h3 class="arena-name">Championship Pitch</h3>
+              <div class="arena-specs"><span>Hybrid Turf</span><span>LED Lights</span></div>
+            </div>
+          </div>
+
+          <div class="arena-card reveal-init">
+            <img src="./images/arena-3.webp" alt="Indoor basketball hardcourt" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">Hardcourt</div>
+              <h3 class="arena-name">Indoor Arena</h3>
+              <div class="arena-specs"><span>Climate Controlled</span><span>Shock Absorbing</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Biometric Performance Testing -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="grid-2" style="align-items:center;">
+          <div class="reveal-init">
+            <div class="section-tag">
+              <span class="material-symbols-outlined">biathlon</span>
+              <span>Data-Driven Development</span>
+            </div>
+            <h2 class="section-title">PRECISION <span>ATHLETE TESTING</span></h2>
+            <p class="section-subtitle" style="margin-bottom:1.5rem;">
+              We eliminate guesswork. Every enrolled athlete receives an individualized biometric passport updated quarterly to track development metrics.
+            </p>
+            <ul style="display:flex; flex-direction:column; gap:0.85rem; color:var(--text-secondary);">
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Optical laser gate 10m, 20m, 40m acceleration testing</span>
+              </li>
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Force plate counter-movement jump (CMJ) vertical leap velocity</span>
+              </li>
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>VO2 Max aerobic threshold and lactic acid recovery clearance</span>
+              </li>
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Body composition DEXA scan for lean muscle mass distribution</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal-init">
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-lg);">
+              <img src="./images/service-6.webp" alt="Athlete sprint testing on track" style="width:100%; height:380px; object-fit:cover;" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Coaching Staff Commitment -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">verified_user</span>
+            <span>Accredited Expertise</span>
+          </div>
+          <h2 class="section-title">OUR COACHING <span>PROMISE</span></h2>
+          <p class="section-subtitle">Dedicated professionals committed to safe, ethical, and high-impact sports training.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">person</span>
+            <h3 class="safety-title">1:8 Coach-Athlete Ratio</h3>
+            <p class="safety-desc">Guaranteed personalized attention and direct tactical feedback on every single training drill.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">lock</span>
+            <h3 class="safety-title">SafeSport Certified</h3>
+            <p class="safety-desc">Rigorous background checks and safeguarding policies protecting athlete mental and physical well-being.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">handshake</span>
+            <h3 class="safety-title">Lifelong Alumni Network</h3>
+            <p class="safety-desc">Ongoing career guidance, agency advice, and alumni club network access long after graduation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Program Enrollment Options & Passes -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">loyalty</span>
+            <span>Flexible Pathways</span>
+          </div>
+          <h2 class="section-title">ACADEMY <span>MEMBERSHIP TIERS</span></h2>
+          <p class="section-subtitle">Choose the level of dedication that matches your collegiate or professional ambitions.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="safety-card reveal-init" style="background:var(--bg-card); border-color:var(--border-color);">
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--text-pure);">DEVELOPMENT SQUAD</div>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.3rem;">Foundational and Intermediate youth athletes.</p>
+            <div style="margin:1.5rem 0; font-family:var(--font-heading); font-size:2.5rem; color:var(--accent-volt);">$180 <span style="font-size:1rem; color:var(--text-muted); font-family:var(--font-main);">/ month</span></div>
+            <ul style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.85rem; color:var(--text-secondary); margin-bottom:2rem;">
+              <li>3 Training Sessions / Week</li>
+              <li>Grassroots Weekend League Entry</li>
+              <li>Basic Biometric Assessment</li>
+              <li>STACKLY Training Kit Included</li>
+            </ul>
+            <a href="register.html" class="btn btn-outline" style="width:100%;">Enroll Track</a>
+          </div>
+
+          <div class="safety-card reveal-init" style="background:var(--bg-card); border:2px solid var(--accent-volt); box-shadow:var(--shadow-glow);">
+            <div style="display:inline-block; font-size:0.7rem; font-weight:800; background:var(--accent-volt); color:#0b0e14; padding:0.2rem 0.6rem; border-radius:var(--radius-full); text-transform:uppercase; margin-bottom:0.5rem;">Most Popular</div>
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--text-pure);">ELITE PRO ACADEMY</div>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.3rem;">Aspiring professional & collegiate student athletes.</p>
+            <div style="margin:1.5rem 0; font-family:var(--font-heading); font-size:2.5rem; color:var(--accent-volt);">$320 <span style="font-size:1rem; color:var(--text-muted); font-family:var(--font-main);">/ month</span></div>
+            <ul style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.85rem; color:var(--text-secondary); margin-bottom:2rem;">
+              <li>5 Training Sessions / Week + Strength Lab</li>
+              <li>Pro Club Scouting Showcase Access</li>
+              <li>Full GPS Heart-Rate Sensor Tracking</li>
+              <li>Nutritionist Diet Plan & Video Review</li>
+            </ul>
+            <a href="register.html" class="btn btn-primary" style="width:100%;">Enroll Elite Track</a>
+          </div>
+
+          <div class="safety-card reveal-init" style="background:var(--bg-card); border-color:var(--border-color);">
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--text-pure);">PRO SHOWCASE RESIDENCY</div>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin-top:0.3rem;">Full-time intensive residential academy.</p>
+            <div style="margin:1.5rem 0; font-family:var(--font-heading); font-size:2.5rem; color:var(--accent-gold);">$650 <span style="font-size:1rem; color:var(--text-muted); font-family:var(--font-main);">/ month</span></div>
+            <ul style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.85rem; color:var(--text-secondary); margin-bottom:2rem;">
+              <li>Daily Pro Immersion + Tactical Classroom</li>
+              <li>European & MLS Direct Scout Friendlies</li>
+              <li>Dedicated Physio & Recovery Protocols</li>
+              <li>Collegiate NCAA Scholarship Portfolio</li>
+            </ul>
+            <a href="register.html" class="btn btn-outline" style="width:100%;">Apply Residency</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FAQ Accordion -->
+    <section class="section-padding">
+      <div class="container" style="max-width:860px;">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">quiz</span>
+            <span>Got Questions?</span>
+          </div>
+          <h2 class="section-title">SERVICES <span>FAQ</span></h2>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="accordion-item active" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden;">
+            <div class="accordion-header" style="padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:var(--text-pure);">What age groups are accepted into the academy?</h4>
+              <span class="material-symbols-outlined accordion-icon" style="color:var(--accent-volt);">expand_less</span>
+            </div>
+            <div class="accordion-content" style="padding:0 1.5rem 1.25rem 1.5rem; color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
+              We offer structured programs starting from age 6 in our Junior Grassroots division, extending all the way through U-19 Elite squads and senior collegiate athlete prep.
+            </div>
+          </div>
+
+          <div class="accordion-item" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden;">
+            <div class="accordion-header" style="padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:var(--text-pure);">Are trials or evaluations required before enrollment?</h4>
+              <span class="material-symbols-outlined accordion-icon" style="color:var(--accent-volt);">expand_more</span>
+            </div>
+            <div class="accordion-content" style="padding:0 1.5rem 1.25rem 1.5rem; color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
+              Yes, all candidates undergo a 60-minute technical and physical baseline assessment so our coaching staff can place the athlete in the appropriate tier for maximum progression.
+            </div>
+          </div>
+
+          <div class="accordion-item" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden;">
+            <div class="accordion-header" style="padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; cursor:pointer;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:var(--text-pure);">How do you assist with collegiate athletic scholarships?</h4>
+              <span class="material-symbols-outlined accordion-icon" style="color:var(--accent-volt);">expand_more</span>
+            </div>
+            <div class="accordion-content" style="padding:0 1.5rem 1.25rem 1.5rem; color:var(--text-secondary); font-size:0.95rem; line-height:1.6;">
+              Our dedicated college recruitment director produces professional highlight reels, assists with NCAA Eligibility Center registration, and facilitates direct communication with university coaches.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CTA Section -->
+    <section class="section-padding" style="padding-bottom:0;">
+      <div class="container">
+        <div class="cta-banner reveal-init">
+          <div class="cta-grid">
+            <div>
+              <h2 class="cta-title">CLAIM YOUR EVALUATION <span>TRIAL PASS</span></h2>
+              <p class="cta-desc">
+                Book an introductory training session today and experience why STACKLY is the leading sports academy for champions.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a href="register.html" class="btn btn-primary" style="width:100%;">
+                <span class="material-symbols-outlined">bolt</span>
+                <span>Register Athlete</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline" style="width:100%;">
+                <span class="material-symbols-outlined">call</span>
+                <span>Book Evaluation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+          </a>
+          <p>
+            STACKLY Sports Academy is an internationally accredited athletic institution dedicated to athletic excellence, tactical mastery, and sports science innovation.
+          </p>
+          <div class="footer-social-list">
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 1"><span class="material-symbols-outlined">public</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 2"><span class="material-symbols-outlined">share</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 3"><span class="material-symbols-outlined">ondemand_video</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 4"><span class="material-symbols-outlined">forum</span></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Home</a>
+            <a href="about.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>About Academy</a>
+            <a href="services.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>All Disciplines</a>
+            <a href="blog.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Sports Science Blog</a>
+            <a href="contact.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Contact Facilities</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Portals</h4>
+          <div class="footer-links-list">
+            <a href="login.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Athlete Login</a>
+            <a href="register.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Register New Athlete</a>
+            <a href="user-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>User Dashboard</a>
+            <a href="admin-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Admin Dashboard</a>
+            <a href="404.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Forgot Password</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Training Arena</h4>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Olympic Boulevard 4500, Elite Stadium Complex, Arena Gate 4</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">call</span>
+            <span>+1 (800) 555-STACKLY</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <span>admissions@stacklyacademy.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY Sports Academy. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html" style="color:var(--text-muted);">Privacy Policy</a>
+          <a href="404.html" style="color:var(--text-muted);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+
+  <!-- Unique Section Animations - Re-trigger on every viewport entry -->
+  <style>
+    /* Animation base states */
+    .anim-fade-up { opacity:0; transform:translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-fade-up.is-in { opacity:1; transform:translateY(0); }
+
+    .anim-fade-left { opacity:0; transform:translateX(-60px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-fade-left.is-in { opacity:1; transform:translateX(0); }
+
+    .anim-fade-right { opacity:0; transform:translateX(60px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .anim-fade-right.is-in { opacity:1; transform:translateX(0); }
+
+    .anim-scale-up { opacity:0; transform:scale(0.85); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .anim-scale-up.is-in { opacity:1; transform:scale(1); }
+
+    .anim-zoom-out { opacity:0; transform:scale(1.3); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .anim-zoom-out.is-in { opacity:1; transform:scale(1); }
+
+    .anim-slide-up { opacity:0; transform:translateY(60px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .anim-slide-up.is-in { opacity:1; transform:translateY(0); }
+
+    .anim-rotate-in { opacity:0; transform:rotate(-3deg) scale(0.9); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .anim-rotate-in.is-in { opacity:1; transform:rotate(0deg) scale(1); }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Assign unique animation to each section (excluding hero)
+      const sections = document.querySelectorAll('main > section');
+      const animTypes = [
+        '',                          // hero - no anim class needed
+        'anim-fade-left',            // Section 2: 3D Carousel
+        'anim-scale-up',            // Section 3: 4-Pillar
+        'anim-fade-right',          // Section 4: Facilities
+        'anim-fade-left',           // Section 5: Biometric
+        'anim-zoom-out',            // Section 6: Coaching
+        'anim-slide-up',            // Section 7: Membership
+        'anim-rotate-in',           // Section 8: FAQ
+        'anim-fade-up'              // Section 9: CTA
+      ];
+
+      sections.forEach((section, i) => {
+        if (i === 0) return; // skip hero
+        const animClass = animTypes[i] || 'anim-fade-up';
+        // Apply to all direct children containers
+        const targets = section.querySelectorAll('.container, .section-header, .grid-3, .grid-4, .grid-2, .cta-banner, .carousel-3d-wrapper');
+        targets.forEach(el => el.classList.add(animClass));
+      });
+
+      // IntersectionObserver - triggers on every viewport entry
+      const allAnimated = document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-up, .anim-zoom-out, .anim-slide-up, .anim-rotate-in');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+          } else {
+            // Remove class so it re-triggers next time
+            entry.target.classList.remove('is-in');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      allAnimated.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

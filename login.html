@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athlete & Coach Portal Login | STACKLY Sports Academy</title>
+  <meta name="description" content="Secure portal login for STACKLY Sports Academy athletes, parents, and administrative staff.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body style="min-height:100vh; display:flex; flex-direction:column; background:radial-gradient(circle at 80% 20%, rgba(198,255,0,0.06) 0%, transparent 50%), var(--bg-dark);">
+
+  <!-- Reading Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Top Navigation Header -->
+  <header style="padding:1.5rem 2rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border-color); background:var(--bg-surface);">
+    <!-- Top Left STACKLY Logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Top Right Back To Home -->
+    <a href="index.html" class="btn btn-outline btn-sm" style="display:inline-flex; align-items:center; gap:0.5rem;">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span>Back To Home</span>
+    </a>
+  </header>
+
+  <!-- Login Form Wrapper -->
+  <main style="flex-grow:1; display:flex; align-items:center; justify-content:center; padding:3rem 1.5rem;">
+    <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:2.5rem; width:100%; max-width:460px; box-shadow:var(--shadow-lg); position:relative;">
+      
+      <div style="text-align:center; margin-bottom:2rem;">
+        <div class="section-tag" style="margin-bottom:0.75rem;">Secure Portal Access</div>
+        <h1 style="font-family:var(--font-heading); font-size:2.2rem; color:var(--text-pure); text-transform:uppercase; letter-spacing:1px;">
+          PORTAL <span>LOGIN</span>
+        </h1>
+        <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:0.35rem;">
+          Enter your authorized academy credentials to continue.
+        </p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <!-- Role Dropdown -->
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label for="role">
+            <span class="material-symbols-outlined">badge</span>
+            <span>Role</span>
+          </label>
+          <select id="role" name="role" required class="form-select">
+            <option value="">Select Portal Role</option>
+            <option value="user" selected>Athlete / User</option>
+            <option value="admin">Coach / Academy Admin</option>
+          </select>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label for="email">
+            <span class="material-symbols-outlined">mail</span>
+            <span>Email Address</span>
+          </label>
+          <input type="email" id="email" name="email" required placeholder="alexander.vance@elite.com" class="form-control">
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label for="password">
+            <span class="material-symbols-outlined">lock</span>
+            <span>Password</span>
+          </label>
+          <div style="position:relative;">
+            <input type="password" id="password" name="password" required placeholder="••••••••" class="form-control" style="padding-right:2.8rem;">
+            <button type="button" id="togglePass" aria-label="Toggle Password Visibility" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); display:flex; align-items:center;">
+              <span class="material-symbols-outlined" style="font-size:20px;">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me & Forgot Password -->
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.75rem; font-size:0.85rem;">
+          <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-secondary); text-transform:none; font-weight:normal;">
+            <input type="checkbox" id="rememberMe" style="accent-color:var(--accent-volt); width:16px; height:16px;">
+            <span>Remember Me</span>
+          </label>
+          <!-- Mandatory requirement: Forgot Password must redirect to 404.html -->
+          <a href="404.html" class="forgot-password-link" style="color:var(--accent-volt); font-weight:600;">
+            Forgot Password?
+          </a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="btn btn-primary" style="width:100%; height:48px; margin-bottom:1.25rem;">
+          <span class="material-symbols-outlined">login</span>
+          <span>Login to Account</span>
+        </button>
+
+        <!-- Register Link -->
+        <div style="text-align:center; font-size:0.9rem; color:var(--text-secondary);">
+          Don't have an academy account? 
+          <a href="register.html" style="color:var(--accent-volt); font-weight:700; margin-left:0.3rem;">Create Account</a>
+        </div>
+      </form>
+
+      <!-- Quick Demo Account Fillers -->
+      <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px dashed var(--border-color); font-size:0.8rem; color:var(--text-muted); text-align:center;">
+        <div style="margin-bottom:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Quick Demo Access</div>
+        <div style="display:flex; gap:0.6rem; justify-content:center;">
+          <button type="button" id="fillUserDemo" class="btn btn-outline btn-sm" style="font-size:0.75rem; padding:0.4rem 0.8rem;">
+            Fill Athlete (User)
+          </button>
+          <button type="button" id="fillAdminDemo" class="btn btn-outline btn-sm" style="font-size:0.75rem; padding:0.4rem 0.8rem;">
+            Fill Coach (Admin)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer style="padding:1.5rem; text-align:center; font-size:0.8rem; color:var(--text-muted); border-top:1px solid var(--border-color); background:var(--bg-surface);">
+    &copy; 2026 STACKLY Sports Academy. All rights reserved.
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/auth.js"></script>
+  <script>
+    // Password toggle
+    const toggleBtn = document.getElementById('togglePass');
+    const passInput = document.getElementById('password');
+    if (toggleBtn && passInput) {
+      toggleBtn.addEventListener('click', () => {
+        const isPass = passInput.type === 'password';
+        passInput.type = isPass ? 'text' : 'password';
+        toggleBtn.innerHTML = `<span class="material-symbols-outlined" style="font-size:20px;">${isPass ? 'visibility_off' : 'visibility'}</span>`;
+      });
+    }
+
+    // Demo Fillers
+    document.getElementById('fillUserDemo')?.addEventListener('click', () => {
+      document.getElementById('role').value = 'user';
+      document.getElementById('email').value = 'alexander.vance@elite.com';
+      document.getElementById('password').value = 'User123!';
+    });
+
+    document.getElementById('fillAdminDemo')?.addEventListener('click', () => {
+      document.getElementById('role').value = 'admin';
+      document.getElementById('email').value = 'admin@stackly.com';
+      document.getElementById('password').value = 'Admin123!';
+    });
+  </script>
+</body>
+</html>

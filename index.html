@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACKLY Sports Academy | Forge Champions & Elevate Athletic Excellence</title>
+  <meta name="description" content="STACKLY Sports Academy - Premier high-performance athletic training, elite youth football academy, strength conditioning, and professional scouting pipeline.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/experience.css">
+</head>
+<body>
+
+  <!-- Reading Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-emblem">
+      <div class="loader-ring"></div>
+      <span class="material-symbols-outlined loader-icon">fitness_center</span>
+    </div>
+    <div class="loader-text">STACKLY ACADEMY</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">
+          <span class="material-symbols-outlined">login</span>
+          <span>Login</span>
+        </a>
+        <a href="register.html" class="btn btn-primary btn-sm">
+          <span class="material-symbols-outlined">how_to_reg</span>
+          <span>Join Academy</span>
+        </a>
+        <button class="mobile-hamburger" aria-label="Open Mobile Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link active">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </a>
+      <a href="about.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">info</span>
+        <span>About</span>
+      </a>
+      <a href="services.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">sports</span>
+        <span>Services</span>
+      </a>
+      <a href="blog.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">article</span>
+        <span>Blog</span>
+      </a>
+      <a href="contact.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">alternate_email</span>
+        <span>Contact</span>
+      </a>
+    </div>
+
+    <!-- Login button inside mobile drawer (Mandatory requirement) -->
+    <div class="mobile-drawer-actions">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">
+        <span class="material-symbols-outlined">login</span>
+        <span>Login to Portal</span>
+      </a>
+      <a href="register.html" class="btn btn-outline" style="width: 100%;">
+        <span class="material-symbols-outlined">person_add</span>
+        <span>Register Athlete</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================
+         CINEMATIC SPORTS ACADEMY SCROLL EXPERIENCE
+         4 stacked scenes driven by scroll progress (js/experience.js):
+         hero → program cards → disciplines list → finale image
+         ============================================ -->
+    <section class="experience" id="experience" aria-label="Academy programs showcase">
+      <div class="exp-track">
+        <div class="exp-sticky">
+          <div class="browser-frame">
+         
+            <div class="exp-stage">
+
+              <!-- SCENE 1 — HERO -->
+              <div class="scene scene-hero">
+                <img class="exp-hero-img" src="./images/experience/hero.webp" alt="Athletes sprinting on a turf pitch at sunrise" loading="eager">
+                <div class="exp-hero-shade" aria-hidden="true"></div>
+               
+                <div class="exp-hero-side" aria-hidden="true">
+                  <span class="exp-side-dot"></span>
+                  <span class="exp-side-line"></span>
+                  <span class="exp-side-txt">EST. 2012 — FORGE CHAMPIONS</span>
+                </div>
+                <h2 class="exp-hero-title">
+                  <span class="exp-title-line l1">FORGE</span>
+                  <span class="exp-title-line l2"><span>CHAMPIONS.</span></span>
+                </h2>
+                <div class="exp-hero-bottom">
+                  <p>Elite coaching, sports science and pro scouting — built to raise champions.</p>
+                  <div class="exp-hero-scroll" aria-hidden="true"><span></span>SCROLL</div>
+                </div>
+              </div>
+
+              <!-- SCENE 2 — PROGRAM CARDS -->
+              <div class="scene scene-properties">
+                <div class="exp-props-inner">
+                  <div class="exp-props-copy">
+                    <div class="exp-props-kicker">Find your discipline</div>
+                    <h3 class="exp-props-title">
+                      <span class="exp-word" style="--i:0"><span>Train.</span></span>
+                      <span class="exp-word" style="--i:1"><span>Compete.</span></span>
+                      <span class="exp-word" style="--i:2"><span>Recover.</span></span>
+                      <span class="exp-word" style="--i:3"><span>Win.</span></span>
+                    </h3>
+                    <form class="exp-search" onsubmit="return false">
+                      <span class="exp-search-ic" aria-hidden="true"></span>
+                      <input type="text" placeholder="Search programs, sports or arenas" aria-label="Search programs">
+                      <button type="submit">Search</button>
+                    </form>
+                  </div>
+                  <div class="exp-props-cards">
+                    <figure class="exp-pcard c1" style="--i:0">
+                      <img src="./images/experience/property-1.webp" alt="Swimmer mid-stroke in an indoor pool" loading="lazy">
+                      <figcaption><b>Aquatics Squad</b><span>Ages 10–18 · Pro lane training</span></figcaption>
+                    </figure>
+                    <figure class="exp-pcard c2" style="--i:1">
+                      <img src="./images/experience/property-2.webp" alt="Athlete in a high-performance gym session" loading="lazy">
+                      <figcaption><b>Strength Lab</b><span>Velocity training · Pro squad</span></figcaption>
+                    </figure>
+                    <figure class="exp-pcard c3" style="--i:2">
+                      <img src="./images/experience/property-3.webp" alt="Sprinter driving out of the blocks" loading="lazy">
+                      <figcaption><b>Track &amp; Speed</b><span>Sprint mechanics · Laser timed</span></figcaption>
+                    </figure>
+                    <figure class="exp-pcard c4" style="--i:3">
+                      <img src="./images/experience/property-4.webp" alt="Basketball player finishing at the rim" loading="lazy">
+                      <figcaption><b>Basketball</b><span>AAU league play · U-19 Elite</span></figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCENE 3 — SERVICES / PROJECT LIST -->
+              <div class="scene scene-services">
+                <div class="exp-services-head">
+                  <span>Training Disciplines</span>
+                  <span>UEFA · Olympic · NCAA</span>
+                </div>
+                <div class="exp-rows">
+                  <div class="exp-row" style="--stagger:0" tabindex="0">
+                    <span class="exp-row-num">/01</span>
+                    <h3 class="exp-row-title">Elite Football Academy</h3>
+                    <span class="exp-row-more">/See more</span>
+                    <div class="exp-row-media" aria-hidden="true">
+                      <img src="./images/experience/project-1.webp" alt="" loading="lazy">
+                    </div>
+                    <a class="exp-row-cta" href="services.html">Check the program <i aria-hidden="true"></i></a>
+                  </div>
+                  <div class="exp-row" style="--stagger:1" tabindex="0">
+                    <span class="exp-row-num">/02</span>
+                    <h3 class="exp-row-title">Olympic Strength Lab</h3>
+                    <span class="exp-row-more">/See more</span>
+                    <div class="exp-row-media" aria-hidden="true">
+                      <img src="./images/experience/project-2.webp" alt="" loading="lazy">
+                    </div>
+                    <a class="exp-row-cta" href="services.html">Check the program <i aria-hidden="true"></i></a>
+                  </div>
+                  <div class="exp-row" style="--stagger:2" tabindex="0">
+                    <span class="exp-row-num">/03</span>
+                    <h3 class="exp-row-title">Track &amp; Speed Program</h3>
+                    <span class="exp-row-more">/See more</span>
+                    <div class="exp-row-media" aria-hidden="true">
+                      <img src="./images/experience/project-3.webp" alt="" loading="lazy">
+                    </div>
+                    <a class="exp-row-cta" href="services.html">Check the program <i aria-hidden="true"></i></a>
+                  </div>
+                  <div class="exp-row" style="--stagger:3" tabindex="0">
+                    <span class="exp-row-num">/04</span>
+                    <h3 class="exp-row-title">Recovery &amp; Medicine</h3>
+                    <span class="exp-row-more">/See more</span>
+                    <div class="exp-row-media" aria-hidden="true">
+                      <img src="./images/experience/project-4.webp" alt="" loading="lazy">
+                    </div>
+                    <a class="exp-row-cta" href="services.html">Check the program <i aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SCENE 4 — FINALE IMAGE + FLOATING UI CARDS -->
+              <div class="scene scene-finale">
+                <img class="exp-finale-img" src="./images/experience/finale.webp" alt="Floodlit stadium pitch under evening lights" loading="lazy">
+                <div class="exp-finale-shade" aria-hidden="true"></div>
+                <div class="exp-finale-labels">
+                  <span>STACKLY ACADEMY</span>
+                  <span>FORGE CHAMPIONS — DOMINATE THE ARENA</span>
+                  <span>ADMISSIONS OPEN 2026</span>
+                </div>
+                <div class="exp-float-card f1"><div class="exp-fc-inner">
+                  <img src="./images/experience/property-1.webp" alt="" loading="lazy">
+                  <div><b>Aquatics Squad</b><span>Trials · Sep 20</span></div>
+                </div></div>
+                <div class="exp-float-card f2"><div class="exp-fc-inner">
+                  <img src="./images/experience/property-2.webp" alt="" loading="lazy">
+                  <div><b>Strength Lab</b><span>4.2K+ athletes</span></div>
+                </div></div>
+                <div class="exp-float-card f3"><div class="exp-fc-inner">
+                  <img src="./images/experience/property-3.webp" alt="" loading="lazy">
+                  <div><b>Track &amp; Speed</b><span>Open clinic · Sun</span></div>
+                </div></div>
+                <div class="exp-float-card f4"><div class="exp-fc-inner">
+                  <img src="./images/experience/property-4.webp" alt="" loading="lazy">
+                  <div><b>Basketball U-19</b><span>AAU champions</span></div>
+                </div></div>
+                <div class="exp-float-card f5"><div class="exp-fc-inner">
+                  <img src="./images/experience/project-1.webp" alt="" loading="lazy">
+                  <div><b>Pro Scouting</b><span>154 signings</span></div>
+                </div></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CINEMATIC SHOE LACING SCROLL EXPERIENCE
+         Large browser-frame cinematic section with lace tighten/loosen on scroll
+         ============================================ -->
+   
+
+    <!-- SECTION 1: Hero with Athletic Movement & Person Lifting Visual -->
+    <section class="hero-section">
+      <!-- Background Video -->
+      <video class="hero-bg-video" autoplay muted loop playsinline poster="./images/hero-athlete.webp">
+        <source src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-video-overlay"></div>
+      <div class="hero-bg-grid"></div>
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <span class="material-symbols-outlined">workspace_premium</span>
+            <span>Premier Athletic Development Center</span>
+          </div>
+
+          <h1 class="hero-title">
+            FORGE <span class="glow-text">CHAMPIONS</span>.<br>
+            DOMINATE THE ARENA.
+          </h1>
+
+          <p class="hero-desc">
+            Empowering the next generation of professional athletes through UEFA & Olympic certified coaching, AI-driven biomechanical video tracking, elite sports medicine, and international scouting pathways.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="register.html" class="btn btn-primary">
+              <span class="material-symbols-outlined">bolt</span>
+              <span>Enroll In Academy</span>
+            </a>
+            <a href="services.html" class="btn btn-outline">
+              <span class="material-symbols-outlined">sports_soccer</span>
+              <span>Explore Programs</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <div class="highlight-num">5K<span>+</span></div>
+              <div class="highlight-label">Active Athletes</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">150<span>+</span></div>
+              <div class="highlight-label">Pro Club Signings</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">42<span>+</span></div>
+              <div class="highlight-label">Trophy Titles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-col">
+          <div class="hero-visual-card tilt-card">
+            <img src="./images/hero-athlete.webp" alt="High performance athlete training on field" class="hero-visual-img" loading="lazy">
+            <div class="hero-visual-overlay"></div>
+
+            <div class="floating-trophy-badge">
+              <span class="material-symbols-outlined">military_tech</span>
+              <span>UEFA Certified Elite Academy</span>
+            </div>
+
+            <!-- Real Person Lifting Animation Widget: page-load entrance + scroll drives the lift reps -->
+            <div class="lifting-animation-widget" id="liftingWidget">
+              <div class="lifting-avatar-box" id="liftingAvatarBox">
+                <span class="lifting-pulse-ring"></span>
+                <img src="./images/athlete-lifting.webp" alt="Athlete lifting heavy barbell" class="lifting-avatar-img" loading="lazy">
+                <span class="lifting-ground-shadow"></span>
+              </div>
+              <div class="lifting-info">
+                <div class="lifting-title">
+                  <span>Olympic Strength & Conditioning</span>
+                  <span class="material-symbols-outlined" style="color:var(--accent-volt); font-size:16px;">trending_up</span>
+                </div>
+                <div class="lifting-rep-meter">
+                  <div class="lifting-rep-progress" id="liftRepBar"></div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.25rem;">Live Biometric Velocity: <span id="liftVelocity">1.4</span> m/s</div>
+              </div>
+              <div class="lifting-rep-counter" aria-label="Live rep counter">
+                <span id="liftRepCount">0</span>
+                <small>REPS</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Athletic Marquee -->
+    <div class="marquee-bar">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="material-symbols-outlined">sports_soccer</span> ELITE FOOTBALL TRIALS 2026</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">fitness_center</span> HIGH-PERFORMANCE STRENGTH LAB</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">biathlon</span> OLYMPIC TRACK & FIELD</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">sports_basketball</span> BASKETBALL MASTERY CLINIC</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">speed</span> SPEED & AGILITY ACCELERATION</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">sports_soccer</span> ELITE FOOTBALL TRIALS 2026</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">fitness_center</span> HIGH-PERFORMANCE STRENGTH LAB</div>
+        <div class="marquee-item"><span class="material-symbols-outlined">biathlon</span> OLYMPIC TRACK & FIELD</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Sports Academy Search & Session Booking Form -->
+    <section class="container" style="position:relative; z-index:15;">
+      <div class="slot-search-wrap">
+        <form id="slotSearchForm" class="slot-search-form">
+          <div class="form-group">
+            <label for="searchSport">
+              <span class="material-symbols-outlined">sports</span>
+              <span>Sports Discipline</span>
+            </label>
+            <select id="searchSport" name="sport" class="form-select">
+              <option value="Football">Pro Football / Soccer</option>
+              <option value="Basketball">Basketball Academy</option>
+              <option value="Track">Track & Sprint Athletics</option>
+              <option value="Strength">Strength & Conditioning</option>
+              <option value="Tennis">Tennis & Racket Elite</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="searchAge">
+              <span class="material-symbols-outlined">group</span>
+              <span>Age Division</span>
+            </label>
+            <select id="searchAge" name="age" class="form-select">
+              <option value="Under 12">Junior Academy (U-12)</option>
+              <option value="Under 16">Development Squad (U-16)</option>
+              <option value="Under 19">Elite Showcase (U-19)</option>
+              <option value="Senior">Senior Pro Division (19+)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="searchLevel">
+              <span class="material-symbols-outlined">equalizer</span>
+              <span>Skill Level</span>
+            </label>
+            <select id="searchLevel" name="level" class="form-select">
+              <option value="Advanced">Advanced Pro Track</option>
+              <option value="Intermediate">Intermediate Competitive</option>
+              <option value="Foundation">Grassroots Foundation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="searchArena">
+              <span class="material-symbols-outlined">stadium</span>
+              <span>Training Facility</span>
+            </label>
+            <select id="searchArena" name="arena" class="form-select">
+              <option value="Main Turf">FIFA Grade-A Arena (Pitch 1)</option>
+              <option value="Olympic Gym">High-Performance Strength Arena</option>
+              <option value="Indoor Hardcourt">National Basketball Hardcourt</option>
+              <option value="Recovery Lab">Hydrotherapy & Recovery Zone</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="height:48px;">
+            <span class="material-symbols-outlined">search</span>
+            <span>Find Sessions</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Sports Academy Services -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">workspace_premium</span>
+            <span>Comprehensive Disciplines</span>
+          </div>
+          <h2 class="section-title">CHAMPIONSHIP <span>DEVELOPMENT</span> SERVICES</h2>
+          <p class="section-subtitle">
+            From grassroots tactical fundamentals to Olympic-level neuromuscular conditioning, our integrated training matrix is crafted to sculpt world-class athletes.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Service Card 1 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-1.webp" alt="Football coaching drills" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Pro Division</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">sports_soccer</span>
+              </div>
+              <h3 class="service-card-title">Pro Football Academy</h3>
+              <p class="service-card-desc">
+                Intensive UEFA-structured tactical curriculum focusing on spatial awareness, high-tempo transitions, and ball mastery on FIFA-standard pitches.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">5 Days / Week</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-2.webp" alt="Athlete strength training gym" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Biomechanics</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">fitness_center</span>
+              </div>
+              <h3 class="service-card-title">Strength & Conditioning</h3>
+              <p class="service-card-desc">
+                Specialized athletic weight training, eccentric overload, core stabilization, and velocity-based power development engineered for peak sport output.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Custom Periodization</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-3.webp" alt="Youth soccer player practicing" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Ages 6 - 14</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">child_care</span>
+              </div>
+              <h3 class="service-card-title">Youth Grassroots League</h3>
+              <p class="service-card-desc">
+                Fostering sporting passion, motor skill coordination, agility, and sportsmanship in a high-energy, supportive, and competitive environment.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Weekend Leagues</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-4.webp" alt="Tactical video analysis on screen" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">AI Video Tech</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">analytics</span>
+              </div>
+              <h3 class="service-card-title">Tactical Match Analysis</h3>
+              <p class="service-card-desc">
+                High-definition drone footage and optical player tracking providing quantitative heatmaps, pass completion metrics, and tactical decision breakdowns.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Post-Match Debrief</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-5.webp" alt="Goalkeeper catching ball" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Specialist</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">sports_handball</span>
+              </div>
+              <h3 class="service-card-title">Goalkeeper Masterclass</h3>
+              <p class="service-card-desc">
+                Elite shot-stopping reflexes, aerial command, distribution precision, and 1v1 angles directed by former international professional keepers.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Small Squad Groups</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media">
+              <img src="./images/service-6.webp" alt="Sprinter accelerating on track" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Sprint Lab</span>
+            </div>
+            <div class="service-card-body">
+              <div class="service-icon-wrap">
+                <span class="material-symbols-outlined">speed</span>
+              </div>
+              <h3 class="service-card-title">Speed, Agility & Quickness</h3>
+              <p class="service-card-desc">
+                Laser-timed sprint mechanics, multidirectional change-of-direction drills, deceleration brakes, and reactive neuromuscular stimulation.
+              </p>
+              <div class="service-card-footer">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Laser Gate Testing</span>
+                <a href="services.html" class="card-link">
+                  <span>Learn More</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Featured Sports & Programs -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">emoji_events</span>
+            <span>Featured Pathways</span>
+          </div>
+          <h2 class="section-title">ELITE SPORTS <span>PATHWAYS</span></h2>
+          <p class="section-subtitle">
+            Comprehensive year-round training programs engineered for athletes aspiring to secure university scholarships or pro contracts.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">sports_soccer</span>
+            <h3 class="safety-title">Premier Football Pathway</h3>
+            <p class="safety-desc">
+              Direct exposure to European scouting networks, bi-annual international tour friendlies, and daily professional squad immersion.
+            </p>
+            <div style="margin-top:1.5rem;">
+              <a href="register.html" class="card-link">
+                <span>View Program Syllabus</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">sports_basketball</span>
+            <h3 class="safety-title">Basketball High-Flyers</h3>
+            <p class="safety-desc">
+              NBA-standard shooting analytics, transition read-and-react drills, high-altitude endurance training, and competitive AAU league play.
+            </p>
+            <div style="margin-top:1.5rem;">
+              <a href="register.html" class="card-link">
+                <span>View Program Syllabus</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">sports_tennis</span>
+            <h3 class="safety-title">Racket & Tennis Pro Academy</h3>
+            <p class="safety-desc">
+              ITF tournament preparation, kinesthetic stroke biomechanics, mental toughness conditioning, and high-intensity rally endurance drills.
+            </p>
+            <div style="margin-top:1.5rem;">
+              <a href="register.html" class="card-link">
+                <span>View Program Syllabus</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Live Events & Match Tracking -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">scoreboard</span>
+            <span>Real-Time Fixtures</span>
+          </div>
+          <h2 class="section-title">LIVE ACADEMY <span>MATCH TRACKING</span></h2>
+          <p class="section-subtitle">
+            Stay updated with live academy tournaments, scout showcase friendlies, and scheduled championship fixtures.
+          </p>
+        </div>
+
+        <div class="fixtures-wrap reveal-init">
+          <!-- Fixture Row 1 -->
+          <div class="fixture-row">
+            <div class="fixture-time">
+              <span class="fixture-date">TODAY, 16:30</span>
+              <span class="fixture-arena">Arena A (Main Pitch)</span>
+            </div>
+            <div class="fixture-team">
+              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+              <span>STACKLY U-19 ELITE</span>
+            </div>
+            <div class="fixture-score">2 - 1</div>
+            <div class="fixture-team away">
+              <span>METRO UNITED FC</span>
+              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="fixture-status-pill status-live">
+                <span class="material-symbols-outlined" style="font-size:14px;">radio_button_checked</span>
+                <span>LIVE 72'</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Fixture Row 2 -->
+          <div class="fixture-row">
+            <div class="fixture-time">
+              <span class="fixture-date">SEP 12, 18:00</span>
+              <span class="fixture-arena">Olympic Center</span>
+            </div>
+            <div class="fixture-team">
+              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+              <span>STACKLY BASKETBALL</span>
+            </div>
+            <div class="fixture-score">VS</div>
+            <div class="fixture-team away">
+              <span>TITANS ACADEMY</span>
+              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="fixture-status-pill status-upcoming">UPCOMING</span>
+            </div>
+          </div>
+
+          <!-- Fixture Row 3 -->
+          <div class="fixture-row">
+            <div class="fixture-time">
+              <span class="fixture-date">SEP 14, 15:00</span>
+              <span class="fixture-arena">National Stadium</span>
+            </div>
+            <div class="fixture-team">
+              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+              <span>STACKLY U-16 YOUTH</span>
+            </div>
+            <div class="fixture-score">4 - 0</div>
+            <div class="fixture-team away">
+              <span>VALLEY RANGERS</span>
+              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="fixture-status-pill status-completed">COMPLETED</span>
+            </div>
+          </div>
+
+          <!-- Fixture Row 4 -->
+          <div class="fixture-row">
+            <div class="fixture-time">
+              <span class="fixture-date">SEP 18, 19:30</span>
+              <span class="fixture-arena">Arena B (Floodlit Turf)</span>
+            </div>
+            <div class="fixture-team">
+              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+              <span>STACKLY SENIOR PRO</span>
+            </div>
+            <div class="fixture-score">VS</div>
+            <div class="fixture-team away">
+              <span>APEX ATHLETIC FC</span>
+              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+            </div>
+            <div style="text-align:right;">
+              <span class="fixture-status-pill status-upcoming">UPCOMING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Popular Training Grounds & Arenas -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">stadium</span>
+            <span>World-Class Infrastructure</span>
+          </div>
+          <h2 class="section-title">ELITE TRAINING <span>GROUNDS & ARENAS</span></h2>
+          <p class="section-subtitle">
+            Train in professional Olympic-grade facilities equipped with smart floodlights, high-traction hybrid pitches, and recovery lounges.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Arena 1 -->
+          <div class="arena-card reveal-init">
+            <img src="./images/arena-1.webp" alt="Main stadium turf pitch" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">Centerpiece</div>
+              <h3 class="arena-name">FIFA Grand Pitch</h3>
+              <div class="arena-specs">
+                <span>105m x 68m Hybrid</span>
+                <span>4,500 Seating</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arena 2 -->
+          <div class="arena-card reveal-init">
+            <img src="./images/arena-2.webp" alt="Olympic weight training gym" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">High Performance</div>
+              <h3 class="arena-name">Olympic Strength Lab</h3>
+              <div class="arena-specs">
+                <span>12,000 Sq. Ft</span>
+                <span>Eleiko Racks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arena 3 -->
+          <div class="arena-card reveal-init">
+            <img src="./images/arena-3.webp" alt="Indoor basketball court" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">Hardwood Pro</div>
+              <h3 class="arena-name">Maple Hardcourt</h3>
+              <div class="arena-specs">
+                <span>FIBA Certified</span>
+                <span>Smart Scoreboards</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arena 4 -->
+          <div class="arena-card reveal-init">
+            <img src="./images/arena-4.webp" alt="Floodlit training turf" class="arena-img" loading="lazy">
+            <div class="arena-gradient"></div>
+            <div class="arena-content">
+              <div class="arena-badge">Night Sessions</div>
+              <h3 class="arena-name">Floodlit Turf Complex</h3>
+              <div class="arena-specs">
+                <span>4 Mini Turfs</span>
+                <span>LED Stadium Light</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Safety & Security & Sports Medicine -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">health_and_safety</span>
+            <span>Athlete Welfare</span>
+          </div>
+          <h2 class="section-title">SAFETY, PROTOCOLS & <span>SPORTS MEDICINE</span></h2>
+          <p class="section-subtitle">
+            Athlete health, injury prevention, and biometric rehabilitation are the cornerstone of our high-performance philosophy.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">medical_services</span>
+            <h3 class="safety-title">On-Site Sports Physiotherapy</h3>
+            <p class="safety-desc">
+              Dedicated full-time licensed sports physiotherapists attending every drill, scrimmage, and match to deliver immediate diagnosis, taping, and ultrasound therapy.
+            </p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">psychology</span>
+            <h3 class="safety-title">Concussion & Return-to-Play</h3>
+            <p class="safety-desc">
+              Standardized SCAT-5 baseline neuro-cognitive screening, graduated exertion return protocols, and certified neurologist oversight for head injury safety.
+            </p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">monitor_heart</span>
+            <h3 class="safety-title">Biometric Load Monitoring</h3>
+            <p class="safety-desc">
+              GPS heart-rate vests monitor acute-to-chronic workload ratios, flagging muscular fatigue early to eliminate non-contact soft-tissue strains before they occur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Why Choose STACKLY -->
+    <div class="why-tilt-wrapper">
+      <section id="whyTiltSection" class="section-padding why-tilt-section" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+        <div class="tilt-blend-glow"></div>
+        <div class="tilt-light-sweep"></div>
+        <div class="container tilt-inner">
+          <div class="grid-2" style="align-items:center;">
+            <div class="reveal-init">
+              <div class="section-tag">
+                <span class="material-symbols-outlined">verified</span>
+                <span>The STACKLY Edge</span>
+              </div>
+              <h2 class="section-title">WHY TOP TALENT <span>CHOOSES STACKLY</span></h2>
+              <p class="section-subtitle" style="margin-bottom:2rem;">
+                We combine elite technical coaching with academic pathways and certified pro scouting representation, creating an unmatched athletic ecosystem.
+              </p>
+
+              <div class="why-item">
+                <div class="why-icon-box">
+                  <span class="material-symbols-outlined">military_tech</span>
+                </div>
+                <div>
+                  <h4 class="why-title">UEFA & Olympic Certified Master Coaches</h4>
+                  <p class="why-desc">Every coach holds accredited international licenses and professional playing or national coaching backgrounds.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon-box">
+                  <span class="material-symbols-outlined">travel_explore</span>
+                </div>
+                <div>
+                  <h4 class="why-title">Direct European & MLS Scouting Pipeline</h4>
+                  <p class="why-desc">Regular scout showcases with direct talent pipelines to tier-1 football academies in Europe and North America.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon-box">
+                  <span class="material-symbols-outlined">school</span>
+                </div>
+                <div>
+                  <h4 class="why-title">Collegiate Scholarship Advising</h4>
+                  <p class="why-desc">NCAA & NAIA eligibility consultation, SAT preparation assistance, and personalized recruitment video production.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal-init">
+              <div style="position:relative; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-lg);">
+                <img src="./images/turf-pitch.webp" alt="Stadium football pitch view" style="width:100%; height:460px; object-fit:cover;" loading="lazy">
+                <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(9,12,16,0.9) 100%);"></div>
+                <div style="position:absolute; bottom:25px; left:25px; right:25px; z-index:2;">
+                  <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--accent-volt); text-transform:uppercase;">
+                    Championship DNA
+                  </div>
+                  <p style="font-size:0.9rem; color:var(--text-secondary);">
+                    Over 12 years of developing champions across youth leagues, national cups, and international pro tournaments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECTION 9: Statistics -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="grid-4 stats-grid">
+          <div class="stat-box reveal-init">
+            <span class="material-symbols-outlined stat-icon">groups</span>
+            <div class="stat-counter"><span class="counter-val" data-target="5200">0</span>+</div>
+            <div class="stat-label">Enrolled Athletes</div>
+          </div>
+
+          <div class="stat-box reveal-init">
+            <span class="material-symbols-outlined stat-icon">handshake</span>
+            <div class="stat-counter"><span class="counter-val" data-target="154">0</span>+</div>
+            <div class="stat-label">Pro Club Signings</div>
+          </div>
+
+          <div class="stat-box reveal-init">
+            <span class="material-symbols-outlined stat-icon">emoji_events</span>
+            <div class="stat-counter"><span class="counter-val" data-target="42">0</span></div>
+            <div class="stat-label">Championship Trophies</div>
+          </div>
+
+          <div class="stat-box reveal-init">
+            <span class="material-symbols-outlined stat-icon">speed</span>
+            <div class="stat-counter"><span class="counter-val" data-target="98">0</span>%</div>
+            <div class="stat-label">Fitness Progression</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: Testimonials -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">format_quote</span>
+            <span>Voices of Champions</span>
+          </div>
+          <h2 class="section-title">ATHLETE & PARENT <span>STORIES</span></h2>
+          <p class="section-subtitle">
+            Read firsthand accounts from athletes and families whose sporting careers were elevated through STACKLY Sports Academy.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card reveal-init">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <p class="testimonial-text">
+              "The tactical depth and GPS physical conditioning at STACKLY completely transformed my game. Within 14 months of enrolling in the U-19 Elite squad, I signed my first professional contract in Europe."
+            </p>
+            <div class="testimonial-author">
+              <img src="./images/coach-1.webp" alt="Athlete Marcus Vance" class="author-avatar" loading="lazy">
+              <div>
+                <div class="author-name">Marcus Vance</div>
+                <div class="author-role">Pro Footballer (Alumnus)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card reveal-init">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <p class="testimonial-text">
+              "As a parent, what impressed me most was the academy's uncompromising focus on safety, injury prevention, and mental toughness. My daughter earned a Division 1 NCAA athletic scholarship."
+            </p>
+            <div class="testimonial-author">
+              <img src="./images/coach-4.webp" alt="Parent Sarah Jenkins" class="author-avatar" loading="lazy">
+              <div>
+                <div class="author-name">Sarah Jenkins</div>
+                <div class="author-role">Academy Parent (U-16 Track)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card reveal-init">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <p class="testimonial-text">
+              "The Olympic strength lab and velocity-based training program added 4 inches to my vertical leap and unmatched defensive speed. Coach Stone’s mentors pushed me beyond my limits every day."
+            </p>
+            <div class="testimonial-author">
+              <img src="./images/coach-2.webp" alt="Athlete David Chen" class="author-avatar" loading="lazy">
+              <div>
+                <div class="author-name">David Chen</div>
+                <div class="author-role">Collegiate Basketball Athlete</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: CTA + Newsletter + Footer -->
+    <section class="section-padding" style="padding-bottom:0;">
+      <div class="container">
+        <div class="cta-banner reveal-init">
+          <div class="cta-grid">
+            <div>
+              <h2 class="cta-title">READY TO WRITE YOUR <span>CHAMPION STORY</span>?</h2>
+              <p class="cta-desc">
+                Admissions for the 2026-2027 high-performance season are now open. Reserve your evaluation slot or apply directly for trial scouting days.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a href="register.html" class="btn btn-primary" style="width:100%;">
+                <span class="material-symbols-outlined">bolt</span>
+                <span>Apply For Tryouts</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline" style="width:100%;">
+                <span class="material-symbols-outlined">call</span>
+                <span>Speak With A Coach</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+          </a>
+          <p>
+            STACKLY Sports Academy is an internationally accredited athletic institution dedicated to athletic excellence, tactical mastery, and sports science innovation.
+          </p>
+          <div class="footer-social-list">
+            <!-- Requirement: Until real URLs are available, every social media icon must redirect to 404.html -->
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 1">
+              <span class="material-symbols-outlined">public</span>
+            </a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 2">
+              <span class="material-symbols-outlined">share</span>
+            </a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 3">
+              <span class="material-symbols-outlined">ondemand_video</span>
+            </a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 4">
+              <span class="material-symbols-outlined">forum</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Home</a>
+            <a href="about.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>About Academy</a>
+            <a href="services.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>All Disciplines</a>
+            <a href="blog.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Sports Science Blog</a>
+            <a href="contact.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Contact Facilities</a>
+          </div>
+        </div>
+
+        <!-- Academy Portals -->
+        <div>
+          <h4 class="footer-column-title">Portals</h4>
+          <div class="footer-links-list">
+            <a href="login.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Athlete Login</a>
+            <a href="register.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Register New Athlete</a>
+            <a href="user-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>User Dashboard</a>
+            <a href="admin-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Admin Dashboard</a>
+            <a href="404.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Forgot Password</a>
+          </div>
+        </div>
+
+        <!-- Contact Details -->
+        <div>
+          <h4 class="footer-column-title">Training Arena</h4>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Olympic Boulevard 4500, Elite Stadium Complex, Arena Gate 4</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">call</span>
+            <span>+1 (800) 555-STACKLY</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <span>admissions@stacklyacademy.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <span>Mon - Sun: 06:00 AM - 10:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY Sports Academy. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html" style="color:var(--text-muted);">Privacy Policy</a>
+          <a href="404.html" style="color:var(--text-muted);">Terms of Service</a>
+          <a href="404.html" style="color:var(--text-muted);">Safety Protocols</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/experience.js"></script>
+  <script src="./js/main.js"></script>
+
+  <!-- Service Card Detail Modal -->
+  <div id="serviceModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(12px); z-index:99999; display:none; align-items:center; justify-content:center; padding:1.5rem;">
+    <div id="serviceModalInner" style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-lg); max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative; transform:scale(0.9) translateY(30px); opacity:0; transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;">
+      <button id="closeServiceModal" style="position:absolute; top:16px; right:16px; color:var(--text-secondary); width:40px; height:40px; border:1px solid var(--border-color); border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:5; background:rgba(16,21,31,0.8); backdrop-filter:blur(6px); transition:all 0.25s ease; cursor:pointer;">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div id="serviceModalMedia" style="width:100%; height:280px; overflow:hidden; border-radius:var(--radius-lg) var(--radius-lg) 0 0; position:relative;">
+        <img id="serviceModalImg" src="" alt="" style="width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(9,12,16,0.9) 100%);"></div>
+        <span id="serviceModalBadge" style="position:absolute; top:16px; left:16px; background:rgba(9,12,16,0.85); backdrop-filter:blur(8px); border:1px solid var(--border-light); color:var(--accent-volt); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:0.35rem 0.75rem; border-radius:var(--radius-full);"></span>
+      </div>
+      <div style="padding:2rem;">
+        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+          <div id="serviceModalIcon" style="width:56px; height:56px; background:rgba(198,255,0,0.1); border:1px solid rgba(198,255,0,0.3); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--accent-volt); flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:28px;"></span>
+          </div>
+          <h3 id="serviceModalTitle" style="font-family:var(--font-heading); font-size:2rem; color:var(--text-pure); text-transform:uppercase; line-height:1.1;"></h3>
+        </div>
+        <p id="serviceModalDesc" style="color:var(--text-secondary); line-height:1.8; font-size:1rem; margin-bottom:1.5rem;"></p>
+        <div id="serviceModalDetails" style="background:var(--bg-card); padding:1.25rem; border-radius:var(--radius-md); border-left:3px solid var(--accent-volt); margin-bottom:1.5rem;">
+          <div style="font-weight:700; color:var(--text-pure); margin-bottom:0.25rem;">Program Highlights</div>
+          <p id="serviceModalHighlights" style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;"></p>
+        </div>
+        <div style="display:flex; gap:1rem;">
+          <a href="services.html" class="btn btn-primary" style="flex:1;">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <span>View Full Program</span>
+          </a>
+          <button id="serviceModalCancel" class="btn btn-outline" style="flex:1;">
+            <span class="material-symbols-outlined">close</span>
+            <span>Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arena Card Hover + Why Choose Blend + Service Modal Script -->
+  <style>
+    /* Service Card Cursor Pointer */
+    .service-card { cursor: pointer; }
+    .service-card:active { transform: scale(0.98); }
+
+    /* Arena Card - Override style.css for hover zoom */
+    .grid-4 .arena-card {
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease, border-color 0.4s ease, filter 0.5s ease !important;
+      cursor: default;
+      will-change: transform;
+    }
+    .grid-4 .arena-card:hover {
+      transform: translateY(-12px) scale(1.1) !important;
+      box-shadow: 0 35px 70px rgba(0,0,0,0.6), 0 0 50px rgba(198,255,0,0.2), 0 0 100px rgba(198,255,0,0.08) !important;
+      border-color: rgba(198,255,0,0.5) !important;
+      z-index: 5;
+    }
+    .grid-4 .arena-card:hover .arena-img {
+      transform: scale(1.2) !important;
+    }
+    .grid-4 .arena-card:hover .arena-name {
+      color: var(--accent-volt) !important;
+    }
+    .grid-4 .arena-card:hover .arena-badge {
+      text-shadow: 0 0 14px rgba(198,255,0,0.6) !important;
+    }
+    /* Dim other cards when one is hovered */
+    .grid-4.arena-hover-active .arena-card:not(.arena-is-hovered) {
+      transform: scale(0.95) !important;
+      filter: brightness(0.65) !important;
+    }
+
+    /* Athlete Welfare - Safety Cards Zoom-Out Entrance */
+    .safety-card-zoom {
+      opacity: 0;
+      transform: scale(1.25);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      overflow: visible !important;
+    }
+    .safety-card-zoom.zoom-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Why Choose STACKLY - 3D Rotate/Tilt Blend Effect */
+    .why-tilt-wrapper {
+      perspective: 1200px;
+      overflow: hidden;
+    }
+    .why-tilt-section {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+    .why-tilt-section .tilt-blend-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(198,255,0,0.15) 0%, rgba(198,255,0,0.06) 35%, transparent 65%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+      filter: blur(40px);
+    }
+    .why-tilt-section:hover .tilt-blend-glow {
+      opacity: 1;
+    }
+    .why-tilt-section .tilt-light-sweep {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        var(--sweep-angle, 135deg),
+        rgba(198,255,0,0.08) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(198,255,0,0.04) 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .why-tilt-section:hover .tilt-light-sweep {
+      opacity: 1;
+    }
+    .why-tilt-section .tilt-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Service Modal Animations */
+    #serviceModal.show #serviceModalInner {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    #serviceModal.show {
+      display: flex;
+    }
+
+    /* Service Card Click Ripple */
+    .service-card .click-ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(198,255,0,0.25);
+      transform: scale(0);
+      animation: rippleOut 0.6s ease-out forwards;
+      pointer-events: none;
+      z-index: 10;
+    }
+    @keyframes rippleOut {
+      to { transform: scale(4); opacity: 0; }
+    }
+
+    /* Toast animation fallback */
+    #toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-pure);
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-lg);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .toast.success { border-left: 3px solid var(--accent-green); }
+    .toast.error { border-left: 3px solid var(--accent-red); }
+    .toast .material-symbols-outlined { color: var(--accent-green); }
+    .toast.error .material-symbols-outlined { color: var(--accent-red); }
+
+    @media (max-width: 768px) {
+      #serviceModalInner { max-height: 95vh; }
+      #serviceModalMedia { height: 200px; }
+      #serviceModal { padding: 0.75rem; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ---- Service Cards Entrance Animation ----
+      const serviceCards = document.querySelectorAll('.service-card.reveal-init');
+      if (serviceCards.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        serviceCards.forEach(card => observer.observe(card));
+      }
+
+      // ---- Service Card Detail Modal ----
+      const modal = document.getElementById('serviceModal');
+      const modalInner = document.getElementById('serviceModalInner');
+      const closeBtn = document.getElementById('closeServiceModal');
+      const cancelBtn = document.getElementById('serviceModalCancel');
+      const modalImg = document.getElementById('serviceModalImg');
+      const modalTitle = document.getElementById('serviceModalTitle');
+      const modalDesc = document.getElementById('serviceModalDesc');
+      const modalHighlights = document.getElementById('serviceModalHighlights');
+      const modalBadge = document.getElementById('serviceModalBadge');
+      const modalIcon = document.getElementById('serviceModalIcon');
+
+      const serviceData = [
+        {
+          title: 'Pro Football Academy',
+          badge: 'Pro Division',
+          icon: 'sports_soccer',
+          img: './images/service-1.webp',
+          desc: 'Intensive UEFA-structured tactical curriculum focusing on spatial awareness, high-tempo transitions, and ball mastery on FIFA-standard pitches. Our elite coaching staff holds UEFA Pro Licenses with professional playing backgrounds across Europe. Athletes train 5 days per week with individualized periodization plans, GPS performance tracking, and video-reviewed tactical sessions.',
+          highlights: 'UEFA Pro License coaches • FIFA-standard hybrid pitch • GPS tracking vests • Weekly tactical video reviews • 5 training sessions per week • International scouting exposure • Pro trial pathway program'
+        },
+        {
+          title: 'Strength & Conditioning',
+          badge: 'Biomechanics',
+          icon: 'fitness_center',
+          img: './images/service-2.webp',
+          desc: 'Specialized athletic weight training, eccentric overload, core stabilization, and velocity-based power development engineered for peak sport output. Our Olympic-grade strength lab features Eleiko competition platforms, force plates, and bar-speed transducers to precisely calibrate every rep for maximum rate of force development.',
+          highlights: 'Eleiko competition platforms • Force plate testing • Velocity-based training (VBT) • Periodized programming • 3D motion capture analysis • Injury prevention screening • Recovery protocols'
+        },
+        {
+          title: 'Youth Grassroots League',
+          badge: 'Ages 6 - 14',
+          icon: 'child_care',
+          img: './images/service-3.webp',
+          desc: 'Fostering sporting passion, motor skill coordination, agility, and sportsmanship in a high-energy, supportive, and competitive environment. Our age-appropriate curriculum builds foundational movement literacy, introduces game intelligence concepts, and cultivates a lifelong love for athletic development in a safe, encouraging setting.',
+          highlights: 'Age-appropriate curriculum • Motor skill development • Weekend competitive leagues • Fun-first coaching philosophy • Parent observation sessions • Progress tracking reports • Holiday camps'
+        },
+        {
+          title: 'Tactical Match Analysis',
+          badge: 'AI Video Tech',
+          icon: 'analytics',
+          img: './images/service-4.webp',
+          desc: 'High-definition drone footage and optical player tracking providing quantitative heatmaps, pass completion metrics, and tactical decision breakdowns. Our proprietary AI analysis platform processes over 2,000 data points per match to deliver actionable insights that elevate both individual decision-making and collective team shape.',
+          highlights: 'Drone-captured match footage • AI-powered heatmaps • 2,000+ data points per match • Individual player reports • Opposition scouting breakdowns • Pass completion analytics • Post-match tactical debriefs'
+        },
+        {
+          title: 'Goalkeeper Masterclass',
+          badge: 'Specialist',
+          icon: 'sports_handball',
+          img: './images/service-5.webp',
+          desc: 'Elite shot-stopping reflexes, aerial command, distribution precision, and 1v1 angles directed by former international professional keepers. This specialist program runs small-squad sessions with dedicated goalkeeper coaches, incorporating reaction light systems, cross-claiming drills, and distribution accuracy testing.',
+          highlights: 'International pro keeper coaches • Small squad groups (max 6) • Reaction light training system • Aerial command drills • Distribution accuracy testing • 1v1 scenario training • Match simulation sessions'
+        },
+        {
+          title: 'Speed, Agility & Quickness',
+          badge: 'Sprint Lab',
+          icon: 'speed',
+          img: './images/service-6.webp',
+          desc: 'Laser-timed sprint mechanics, multidirectional change-of-direction drills, deceleration brakes, and reactive neuromuscular stimulation. Our dedicated sprint lab uses laser timing gates at 200Hz sampling to capture split times with millisecond precision, enabling athletes to identify and eliminate micro-inefficiencies in their acceleration profiles.',
+          highlights: 'Laser timing gates (200Hz) • Sprint mechanics analysis • Change-of-direction testing • Deceleration brake training • Reactive agility systems • Plyometric programming • Acceleration force profiling'
+        }
+      ];
+
+      const allCards = document.querySelectorAll('.grid-3 .service-card');
+
+      function openServiceModal(index) {
+        const data = serviceData[index];
+        if (!data || !modal) return;
+        modalImg.src = data.img;
+        modalImg.alt = data.title;
+        modalTitle.textContent = data.title;
+        modalDesc.textContent = data.desc;
+        modalHighlights.textContent = data.highlights;
+        modalBadge.textContent = data.badge;
+        modalIcon.querySelector('.material-symbols-outlined').textContent = data.icon;
+        modal.classList.add('show');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        // Trigger reflow for animation
+        void modalInner.offsetHeight;
+        modalInner.style.transform = 'scale(1) translateY(0)';
+        modalInner.style.opacity = '1';
+      }
+
+      function closeServiceModal() {
+        if (!modal) return;
+        modalInner.style.transform = 'scale(0.9) translateY(30px)';
+        modalInner.style.opacity = '0';
+        setTimeout(() => {
+          modal.classList.remove('show');
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 350);
+      }
+
+      allCards.forEach((card, i) => {
+        card.addEventListener('click', () => openServiceModal(i));
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeServiceModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeServiceModal);
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeServiceModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.style.display === 'flex') closeServiceModal();
+      });
+
+      // ---- WHY TOP TALENT - 3D Rotate/Tilt Blend Effect ----
+      const whyTiltSection = document.getElementById('whyTiltSection');
+      if (whyTiltSection) {
+        const tiltGlow = whyTiltSection.querySelector('.tilt-blend-glow');
+        const lightSweep = whyTiltSection.querySelector('.tilt-light-sweep');
+        let currentRotateX = 0;
+        let currentRotateY = 0;
+        let targetRotateX = 0;
+        let targetRotateY = 0;
+        let isHovering = false;
+        let rafId = null;
+
+        function animateTilt() {
+          currentRotateX += (targetRotateX - currentRotateX) * 0.08;
+          currentRotateY += (targetRotateY - currentRotateY) * 0.08;
+
+          whyTiltSection.style.transform =
+            'rotateX(' + currentRotateX.toFixed(2) + 'deg) rotateY(' + currentRotateY.toFixed(2) + 'deg)';
+
+          if (Math.abs(targetRotateX - currentRotateX) > 0.01 ||
+              Math.abs(targetRotateY - currentRotateY) > 0.01) {
+            rafId = requestAnimationFrame(animateTilt);
+          } else {
+            rafId = null;
+          }
+        }
+
+        whyTiltSection.addEventListener('mousemove', (e) => {
+          const rect = whyTiltSection.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Rotate Y based on horizontal mouse position (side angle tilt)
+          targetRotateY = ((x - centerX) / centerX) * 4;
+          // Rotate X based on vertical mouse position (subtle up/down tilt)
+          targetRotateX = ((y - centerY) / centerY) * -2.5;
+
+          // Update sweep angle based on mouse direction
+          var sweepAngle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 180;
+          whyTiltSection.style.setProperty('--sweep-angle', sweepAngle + 'deg');
+
+          // Move the glow with the cursor
+          if (tiltGlow) {
+            tiltGlow.style.left = x + 'px';
+            tiltGlow.style.top = y + 'px';
+          }
+
+          if (!rafId) rafId = requestAnimationFrame(animateTilt);
+        });
+
+        whyTiltSection.addEventListener('mouseleave', () => {
+          targetRotateX = 0;
+          targetRotateY = 0;
+          if (!rafId) rafId = requestAnimationFrame(animateTilt);
+        });
+      }
+
+      // ---- Athlete Welfare - Safety Cards Zoom-Out on Section Entry ----
+      const safetyCards = document.querySelectorAll('.safety-card');
+      if (safetyCards.length > 0) {
+        // Add the zoom class to all safety cards
+        safetyCards.forEach(card => card.classList.add('safety-card-zoom'));
+
+        const safetyObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Stagger the zoom-out entrance for each card
+              const card = entry.target;
+              const index = Array.from(safetyCards).indexOf(card);
+              setTimeout(() => {
+                card.classList.add('zoom-active');
+              }, index * 150);
+              safetyObserver.unobserve(card);
+            } else {
+              // Reset when section leaves viewport so it animates again
+              entry.target.classList.remove('zoom-active');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        safetyCards.forEach(card => safetyObserver.observe(card));
+      }
+
+      // ---- Arena Card Hover - Dim Others ----
+      const arenaGrid = document.querySelector('.grid-4');
+      const arenaCards = document.querySelectorAll('.arena-card');
+      if (arenaGrid && arenaCards.length) {
+        arenaCards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            arenaGrid.classList.add('arena-hover-active');
+            card.classList.add('arena-is-hovered');
+          });
+          card.addEventListener('mouseleave', () => {
+            arenaGrid.classList.remove('arena-hover-active');
+            card.classList.remove('arena-is-hovered');
+          });
+        });
+      }
+
+      // ---- Apple-style Group-to-Ungroup on Scroll ----
+      const arenaSection = document.querySelector('.section-padding .grid-4')?.closest('.section-padding');
+      if (arenaGrid && arenaSection) {
+        // Store original gap from CSS
+        const cards = Array.from(arenaGrid.querySelectorAll('.arena-card'));
+        const defaultGap = 24; // matches grid-4 gap
+
+        // Start grouped (gap = 0, cards overlap slightly)
+        arenaGrid.style.gap = '0px';
+        cards.forEach(card => {
+          card.style.transition = 'transform 0.8s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease, margin 0.8s cubic-bezier(0.16,1,0.3,1)';
+          card.style.margin = '0 -8px';
+          card.style.opacity = '0.7';
+          card.style.position = 'relative';
+          card.style.zIndex = '1';
+        });
+
+        // On scroll, spread them apart
+        function updateArenaSpread() {
+          const rect = arenaSection.getBoundingClientRect();
+          const vh = window.innerHeight;
+          // Progress: 0 when section enters viewport, 1 when fully in view
+          const rawProgress = 1 - (rect.top / vh);
+          const progress = Math.min(1, Math.max(0, rawProgress));
+
+          // Smooth eased progress
+          const eased = progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+          // Spread gap from 0 to defaultGap
+          const currentGap = defaultGap * eased;
+          arenaGrid.style.gap = currentGap + 'px';
+
+          // Remove negative margin as they spread
+          const currentMargin = -8 * (1 - eased);
+          cards.forEach((card, i) => {
+            card.style.margin = '0 ' + currentMargin + 'px';
+            card.style.opacity = 0.7 + 0.3 * eased;
+          });
+        }
+
+        window.addEventListener('scroll', updateArenaSpread, { passive: true });
+        updateArenaSpread();
+      }
+    });
+  </script>
+</body>
+</html>

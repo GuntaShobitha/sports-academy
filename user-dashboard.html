@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athlete Performance Portal | STACKLY Sports Academy</title>
+  <meta name="description" content="Manage high-performance athletic training sessions, view biometric clearances, track fitness metrics, and explore STACKLY Sports Academy facilities.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="dash-sidebar-overlay"></div>
+
+  <!-- Left Sidebar Navigation -->
+  <aside class="dash-sidebar">
+    <div class="dash-sidebar-header">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+      <button class="dash-sidebar-close" aria-label="Close Sidebar">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Synchronized Athlete Profile in Sidebar -->
+    <div class="dash-user-card">
+      <div class="dash-user-avatar">
+        <span class="material-symbols-outlined">sports_handball</span>
+      </div>
+      <div class="dash-user-meta">
+        <div class="dash-user-name" id="sidebarUserName">Alexander Vance</div>
+        <!-- Exact email displayed without stripping domain -->
+        <div class="dash-user-email" id="sidebarUserEmail">alexander.vance@elite.com</div>
+        <span class="dash-user-role-badge role-user" id="sidebarUserRole">ATHLETE / MEMBER</span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu Items (Sports Academy Themed) -->
+    <nav class="dash-nav">
+      <a href="#dashboard" class="dash-nav-item active" data-tab="dashboard">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#book-session" class="dash-nav-item" data-tab="book-session">
+        <span class="material-symbols-outlined">event_available</span>
+        <span>Book Session</span>
+      </a>
+      <a href="#my-bookings" class="dash-nav-item" data-tab="my-bookings">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span>My Bookings</span>
+        <span class="dash-nav-badge" id="sidebarBookingCount">3</span>
+      </a>
+      <a href="#performance-tracker" class="dash-nav-item" data-tab="performance-tracker">
+        <span class="material-symbols-outlined">monitoring</span>
+        <span>Performance Tracker</span>
+      </a>
+      <a href="#academy-facilities" class="dash-nav-item" data-tab="academy-facilities">
+        <span class="material-symbols-outlined">stadium</span>
+        <span>Academy Facilities</span>
+      </a>
+      <a href="#notifications" class="dash-nav-item" data-tab="notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <span>Notifications</span>
+      </a>
+      <a href="#profile" class="dash-nav-item" data-tab="profile">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span>Profile</span>
+      </a>
+      <a href="#settings" class="dash-nav-item" data-tab="settings">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <!-- Logout Action in Sidebar -->
+    <div class="dash-nav-logout">
+      <button class="dash-logout-btn" type="button">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Container -->
+  <div class="dash-main">
+
+    <!-- Sticky Top Navigation Bar -->
+    <header class="dash-topbar">
+      <div class="dash-topbar-left">
+        <button class="dash-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <!-- Real-time dynamic search -->
+        <div class="dash-search-box">
+          <span class="material-symbols-outlined">search</span>
+          <input type="text" class="dash-search-input" placeholder="Search sessions, drills, coaches...">
+        </div>
+      </div>
+
+      <div class="dash-topbar-right">
+        <!-- Notifications button -->
+        <button class="dash-topbar-btn" data-action="notifications" aria-label="View Notifications">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="dash-notif-dot"></span>
+        </button>
+
+        <!-- Top Right Profile Pill (Always Synchronized) -->
+        <div class="dash-profile-badge" data-jump-tab="profile">
+          <div class="dash-profile-avatar">
+            <span class="material-symbols-outlined" style="font-size:20px;">sports_handball</span>
+          </div>
+          <span class="dash-profile-name" id="topbarUserName">Alexander Vance</span>
+          <span class="material-symbols-outlined" style="font-size:18px; color:var(--text-muted);">arrow_drop_down</span>
+        </div>
+
+        <!-- Topbar Logout Button -->
+        <button class="dash-logout-btn dash-topbar-logout" type="button" title="Logout">
+          <span class="material-symbols-outlined">logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace Tabbed Views -->
+    <main class="dash-content">
+
+      <!-- ===================================================================
+           TAB 1: ATHLETE DASHBOARD OVERVIEW
+           =================================================================== -->
+      <section class="dash-view-tab active-tab" id="tab-dashboard">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">ATHLETE <span>PERFORMANCE PORTAL</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Welcome back, Alexander! Review your upcoming training fixtures, biometric readiness, and coach notes.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-sm" data-jump-tab="book-session">
+            <span class="material-symbols-outlined">add_task</span>
+            <span>Book Training Slot</span>
+          </button>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="dash-stats-grid">
+          <div class="metric-card">
+            <div>
+              <div class="metric-value" id="metricActiveSessions">3 Active</div>
+              <div class="metric-label">Scheduled Sessions</div>
+              <div class="metric-trend">
+                <span class="material-symbols-outlined" style="font-size:16px;">verified</span>
+                <span>Cleared for Full Contact</span>
+              </div>
+            </div>
+            <div class="metric-icon-box">
+              <span class="material-symbols-outlined">calendar_month</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">48.5 hrs</div>
+              <div class="metric-label">Field & Gym Hours</div>
+              <div class="metric-trend">
+                <span class="material-symbols-outlined" style="font-size:16px;">trending_up</span>
+                <span>+6.5 hrs this week</span>
+              </div>
+            </div>
+            <div class="metric-icon-box">
+              <span class="material-symbols-outlined">timer</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">08:30 AM</div>
+              <div class="metric-label">Next Training Slot</div>
+              <div class="metric-trend" style="color:var(--accent-volt);">
+                <span class="material-symbols-outlined" style="font-size:16px;">stadium</span>
+                <span>FIFA Arena A • Turf</span>
+              </div>
+            </div>
+            <div class="metric-icon-box">
+              <span class="material-symbols-outlined">schedule</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">98.4%</div>
+              <div class="metric-label">Biometric Readiness</div>
+              <div class="metric-trend">
+                <span class="material-symbols-outlined" style="font-size:16px;">speed</span>
+                <span>Peak Athletic Condition</span>
+              </div>
+            </div>
+            <div class="metric-icon-box">
+              <span class="material-symbols-outlined">fitness_center</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Navigation Strip -->
+        <div class="quick-actions-bar">
+          <div class="quick-action-btn" data-jump-tab="book-session">
+            <span class="material-symbols-outlined">event_available</span>
+            <span>Reserve Training Slot</span>
+          </div>
+          <div class="quick-action-btn" data-jump-tab="my-bookings">
+            <span class="material-symbols-outlined">badge</span>
+            <span>View Athlete Passes</span>
+          </div>
+          <div class="quick-action-btn" data-jump-tab="performance-tracker">
+            <span class="material-symbols-outlined">insights</span>
+            <span>Biometrics & Benchmarks</span>
+          </div>
+          <div class="quick-action-btn" data-jump-tab="academy-facilities">
+            <span class="material-symbols-outlined">stadium</span>
+            <span>Explore Arenas & Labs</span>
+          </div>
+        </div>
+
+        <!-- Real-Time Biometric & Barbell Velocity Radar -->
+        <div class="dash-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:0.5rem;">
+            <div>
+              <span class="fixture-status-pill status-live" style="margin-bottom:0.4rem;">LIVE TELEMETRY</span>
+              <h3 style="font-family:var(--font-heading); font-size:1.4rem; color:var(--text-pure); letter-spacing:0.5px;">
+                OLYMPIC STRENGTH & KINETIC ACCELERATION RADAR
+              </h3>
+            </div>
+            <button class="btn btn-outline btn-sm" data-jump-tab="performance-tracker">
+              <span class="material-symbols-outlined">analytics</span>
+              <span>Detailed Analytics</span>
+            </button>
+          </div>
+
+          <div class="grid-2" style="align-items:center; gap:2rem;">
+            <div style="background:var(--bg-surface); padding:1.5rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem; font-size:0.9rem;">
+                <span style="font-weight:700; color:var(--text-pure);">Dynamic Repetitions Completed</span>
+                <span style="color:var(--accent-volt); font-weight:800;">18 / 20 Reps (90%)</span>
+              </div>
+              <div style="height:10px; background:var(--bg-card); border-radius:5px; overflow:hidden; margin-bottom:1.5rem;">
+                <div style="width:90%; height:100%; background:linear-gradient(90deg, var(--accent-volt) 0%, #a3e635 100%); border-radius:5px;"></div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; text-align:center;">
+                <div style="background:var(--bg-card); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Mean Bar Speed</div>
+                  <div style="font-weight:800; font-size:1.1rem; color:var(--accent-volt); margin-top:0.2rem;">1.42 m/s</div>
+                </div>
+                <div style="background:var(--bg-card); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Max Heart Rate</div>
+                  <div style="font-weight:800; font-size:1.1rem; color:var(--text-pure); margin-top:0.2rem;">174 BPM</div>
+                </div>
+                <div style="background:var(--bg-card); padding:0.75rem; border-radius:var(--radius-sm);">
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Lactate Level</div>
+                  <div style="font-weight:800; font-size:1.1rem; color:#34d399; margin-top:0.2rem;">2.1 mmol/L</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1.25rem;">
+              <div style="width:110px; height:110px; border-radius:var(--radius-md); overflow:hidden; flex-shrink:0; border:2px solid var(--accent-volt);">
+                <img src="./images/athlete-lifting.webp" alt="Athlete lifting in gym" class="img-pop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+              </div>
+              <div>
+                <div style="font-size:0.75rem; color:var(--accent-volt); text-transform:uppercase; font-weight:700;">Coach Evaluation</div>
+                <h4 style="font-family:var(--font-heading); font-size:1.25rem; color:var(--text-pure); margin:0.2rem 0 0.4rem 0;">
+                  Kinetic Force Coupling: Optimal
+                </h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+                  Barbell drive trajectory is within 1.2 degrees of vertical true plumb. Recovery heart rate dropped by 28 bpm within 60 seconds post-set.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Training Sessions Table -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <span class="material-symbols-outlined">event_note</span>
+              <span>Upcoming & Recent Training Sessions</span>
+            </div>
+            <button class="btn btn-outline btn-sm" data-jump-tab="my-bookings">
+              <span>View All Bookings</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Session ID</th>
+                  <th>Training Program & Arena</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                  <th>Pass Action</th>
+                </tr>
+              </thead>
+              <tbody id="recentBookingsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Today's Training Plan -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <span class="material-symbols-outlined">today</span>
+              <span>Today's Training Plan</span>
+            </div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">2026-09-10 • Varsity Squad</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>08:30 - 10:00 • Speed Lab Kinetic Sprint Mechanics</strong>
+                <div class="dash-list-sub">Olympic Track B • Coach David Vance</div>
+              </div>
+              <span class="status-badge ontime">Up Next</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>11:00 - 12:30 • Technical Ball Mastery Circuit</strong>
+                <div class="dash-list-sub">FIFA Arena A • Head Coach Marcus Stone</div>
+              </div>
+              <span class="status-badge pending">Scheduled</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>16:00 - 17:30 • Olympic Strength & Power Block</strong>
+                <div class="dash-list-sub">Olympic Gym Zone B • Coach Elena Rostova</div>
+              </div>
+              <span class="status-badge pending">Scheduled</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach's Tactical Notes -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">stylus_note</span>
+            <span>Coach's Tactical Notes</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Set-piece priority: near-post runs</strong>
+                <div class="dash-list-sub">Review the corner routine clip before Friday's scrimmage.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Hydration protocol updated</strong>
+                <div class="dash-list-sub">500ml per 20 minutes of pitch work in the current heat index.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Biometric recheck flagged</strong>
+                <div class="dash-list-sub">Barbell velocity baseline re-test booked for Thursday 07:00 AM.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Match Countdown & Recovery -->
+        <div class="dash-sub-grid" data-anim="fade-up">
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">flag</span> Next Match Countdown</div>
+            <div class="metric-value">05 Days</div>
+            <div class="metric-label">UEFA Youth Showcase vs FC Porto Youth</div>
+            <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">stadium</span><span>FIFA Arena A • 18:00</span></div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">spa</span> Recovery Window</div>
+            <div class="metric-value">48 hrs</div>
+            <div class="metric-label">Hydrotherapy & cryo sessions this week</div>
+            <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">verified</span><span>2 sessions completed</span></div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">restaurant</span> Nutrition Target</div>
+            <div class="metric-value">2,850 kcal</div>
+            <div class="metric-label">Daily intake goal • 185g protein</div>
+            <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">bolt</span><span>72% logged today</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 2: BOOK SESSION
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-book-session">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">BOOK <span>TRAINING SESSION</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Reserve high-performance academy training slots, pitch sessions, strength labs, and 1-on-1 masterclasses.
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-panel" style="max-width:860px;">
+          <form id="bookSessionForm" novalidate>
+            <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+              <!-- Training Program -->
+              <div class="form-group">
+                <label for="sessionProgram">
+                  <span class="material-symbols-outlined">sports_soccer</span>
+                  <span>Training Program / Sport</span>
+                </label>
+                <select id="sessionProgram" class="form-select" required>
+                  <option value="">Select Training Program</option>
+                  <option value="Elite Football Striker Masterclass" selected>Elite Football Striker Masterclass</option>
+                  <option value="Olympic Strength & Velocity Conditioning">Olympic Strength & Velocity Conditioning</option>
+                  <option value="Speed Lab Kinetic Sprint Mechanics">Speed Lab Kinetic Sprint Mechanics</option>
+                  <option value="Basketball Agility & Plyometrics">Basketball Agility & Plyometrics</option>
+                  <option value="Sports Hydrotherapy & Recovery Spa">Sports Hydrotherapy & Recovery Spa</option>
+                  <option value="Pro Scout Assessment & Video Review">Pro Scout Assessment & Video Review</option>
+                </select>
+              </div>
+
+              <!-- Arena / Facility -->
+              <div class="form-group">
+                <label for="sessionArena">
+                  <span class="material-symbols-outlined">stadium</span>
+                  <span>Academy Facility Arena</span>
+                </label>
+                <select id="sessionArena" class="form-select" required>
+                  <option value="">Select Training Arena</option>
+                  <option value="FIFA Arena A (Main Turf)" selected>FIFA Arena A (Main Turf)</option>
+                  <option value="Olympic Gym Zone B (Strength Lab)">Olympic Gym Zone B (Strength Lab)</option>
+                  <option value="Olympic Track B (Kinetic 400m)">Olympic Track B (Kinetic 400m)</option>
+                  <option value="Aquatic Recovery Spa & Pool">Aquatic Recovery Spa & Pool</option>
+                  <option value="Hardwood Court 1 (Basketball Dome)">Hardwood Court 1 (Basketball Dome)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+              <!-- Training Date -->
+              <div class="form-group">
+                <label for="sessionDate">
+                  <span class="material-symbols-outlined">calendar_month</span>
+                  <span>Session Date</span>
+                </label>
+                <input type="date" id="sessionDate" class="form-control" required>
+              </div>
+
+              <!-- Time Slot -->
+              <div class="form-group">
+                <label for="sessionTime">
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span>Time Slot</span>
+                </label>
+                <select id="sessionTime" class="form-select" required>
+                  <option value="07:00 AM">Morning Dawn Squad (07:00 AM - 08:30 AM)</option>
+                  <option value="08:30 AM" selected>Primary Varsity Slot (08:30 AM - 10:00 AM)</option>
+                  <option value="11:00 AM">Mid-Day Technical Drills (11:00 AM - 12:30 PM)</option>
+                  <option value="04:00 PM">Afternoon Strength & Power (04:00 PM - 05:30 PM)</option>
+                  <option value="06:30 PM">Evening Tactical Scrimmage (06:30 PM - 08:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+              <!-- Training Tier -->
+              <div class="form-group">
+                <label for="sessionTier">
+                  <span class="material-symbols-outlined">military_tech</span>
+                  <span>Training Tier</span>
+                </label>
+                <select id="sessionTier" class="form-select" required>
+                  <option value="standard" selected>Standard Academy Athlete ($45)</option>
+                  <option value="elite">Elite Varsity Squad ($67.50)</option>
+                  <option value="1on1">1-on-1 Masterclass with Head Coach ($99)</option>
+                </select>
+              </div>
+
+              <!-- Assigned Coach -->
+              <div class="form-group">
+                <label for="sessionCoach">
+                  <span class="material-symbols-outlined">person</span>
+                  <span>Preferred Coach / Specialist</span>
+                </label>
+                <select id="sessionCoach" class="form-select">
+                  <option value="Head Coach Marcus Stone" selected>Head Coach Marcus Stone (UEFA Pro)</option>
+                  <option value="Coach Elena Rostova">Coach Elena Rostova (Strength & Olympic Lifting)</option>
+                  <option value="David Vance">David Vance (Speed Mechanics & Track)</option>
+                  <option value="Dr. Sarah Jenkins">Dr. Sarah Jenkins (Sports Physio & Recovery)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Fee Calculation & Submit Box -->
+            <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1.25rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-top:2rem;">
+              <div>
+                <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Total Training Fee</div>
+                <div id="sessionCalculatedFee" style="font-family:var(--font-heading); font-size:2.2rem; color:var(--accent-volt); line-height:1;">
+                  $45.00
+                </div>
+                <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:0.25rem;">Includes Biometric Tracking, Facility Access & Hydration Pack</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="padding:0.85rem 2rem;">
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Confirm & Reserve Slot</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Popular Training Programs -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">workspace_premium</span>
+            <span>Popular Training Programs This Week</span>
+          </div>
+          <div class="dash-sub-grid" style="margin-bottom:0;">
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">sports_soccer</span> Striker Finishing Lab</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">High-volume finishing, first-touch strikes and 1v1 goalkeeper duels with video review.</div>
+              <div class="metric-trend" style="margin-top:0.6rem;"><span class="material-symbols-outlined" style="font-size:16px;">group</span><span>24 athletes booked • 3 spots left</span></div>
+            </div>
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">fitness_center</span> Olympic Lifting Clinic</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Snatch & clean-jerk technique under linear transducer velocity feedback.</div>
+              <div class="metric-trend" style="margin-top:0.6rem;"><span class="material-symbols-outlined" style="font-size:16px;">group</span><span>18 athletes booked • 6 spots left</span></div>
+            </div>
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">bolt</span> Speed & Acceleration Camp</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Laser-gated 10m-30m sprint blocks with force-velocity profiling.</div>
+              <div class="metric-trend" style="margin-top:0.6rem;"><span class="material-symbols-outlined" style="font-size:16px;">group</span><span>15 athletes booked • 9 spots left</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Available Time Slots -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">schedule</span>
+            <span>Available Time Slots Today</span>
+          </div>
+          <div class="dash-chip-row" style="margin-bottom:0;">
+            <span class="dash-chip active"><span class="material-symbols-outlined">check_circle</span>07:00 AM • 2 spots</span>
+            <span class="dash-chip active"><span class="material-symbols-outlined">check_circle</span>08:30 AM • 4 spots</span>
+            <span class="dash-chip active"><span class="material-symbols-outlined">check_circle</span>11:00 AM • 5 spots</span>
+            <span class="dash-chip active"><span class="material-symbols-outlined">check_circle</span>04:00 PM • 3 spots</span>
+            <span class="dash-chip"><span class="material-symbols-outlined">close</span>06:30 PM • Full</span>
+          </div>
+          <div style="font-size:0.78rem; color:var(--text-muted); margin-top:1rem;">Select a program above, then reserve your preferred time slot with the booking form.</div>
+        </div>
+
+        <!-- Meet the Coaching Staff -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">sports</span>
+            <span>Meet Your Coaching Staff</span>
+          </div>
+          <div class="dash-sub-grid" style="margin-bottom:0;">
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">military_tech</span> Head Coach Marcus Stone</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">UEFA Pro licensed. 14 years elite youth development, 9 academy league titles.</div>
+            </div>
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">fitness_center</span> Coach Elena Rostova</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Olympic lifting specialist and national weightlifting medalist.</div>
+            </div>
+            <div class="dash-mini-card">
+              <div class="dash-mini-card-title"><span class="material-symbols-outlined">speed</span> Coach David Vance</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Sprint biomechanics lead, laser-gate timing specialist, former national 100m finalist.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 3: MY BOOKINGS
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-my-bookings">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">MY <span>TRAINING BOOKINGS</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              View confirmed session times, download digital biometric passes, and manage your training schedule.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-sm" data-jump-tab="book-session">
+            <span class="material-symbols-outlined">add</span>
+            <span>Book New Session</span>
+          </button>
+        </div>
+
+        <div class="dash-panel">
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Session ID</th>
+                  <th>Program & Facility</th>
+                  <th>Date & Time</th>
+                  <th>Coach</th>
+                  <th>Fee</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="myBookingsTableBody">
+                <!-- Populated dynamically by dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Booking Summary Stats -->
+        <div class="dash-sub-grid" data-anim="fade-up">
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">event_available</span> Confirmed Sessions</div>
+            <div class="metric-value">3</div>
+            <div class="metric-label">This month • Varsity squad</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">calendar_month</span> Upcoming This Week</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">Sprint lab & strength block</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">payments</span> Season Spend</div>
+            <div class="metric-value">$612</div>
+            <div class="metric-label">Training fees • 98% attendance</div>
+          </div>
+        </div>
+
+        <!-- Upcoming Sessions Timeline -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1rem;">
+            <span class="material-symbols-outlined">timeline</span>
+            <span>Upcoming Sessions Timeline</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <div>
+              <strong>Elite Football Striker Masterclass</strong>
+              <div class="dash-list-sub">FIFA Arena A • Coach Marcus Stone • Striker finishing circuit</div>
+            </div>
+            <span class="timeline-time">2026-09-15 • 08:30 AM</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot amber"></span>
+            <div>
+              <strong>Olympic Strength & Velocity Conditioning</strong>
+              <div class="dash-list-sub">Olympic Gym Zone B • Coach Elena Rostova • Clean & jerk block</div>
+            </div>
+            <span class="timeline-time">2026-09-17 • 04:00 PM</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-dot red"></span>
+            <div>
+              <strong>Pro Scout Assessment & Video Review</strong>
+              <div class="dash-list-sub">Analysis Room 2 • Head Coach • Match footage breakdown</div>
+            </div>
+            <span class="timeline-time">2026-09-19 • 11:00 AM</span>
+          </div>
+        </div>
+
+        <!-- Cancellation Policy -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">policy</span>
+            <span>Cancellation & Reschedule Policy</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Free cancellation window</strong>
+                <div class="dash-list-sub">Reschedule or cancel up to 12 hours before the session start.</div>
+              </div>
+              <span class="status-badge ontime">No Fee</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Late cancellation</strong>
+                <div class="dash-list-sub">Less than 12 hours before start retains 50% of the session fee.</div>
+              </div>
+              <span class="status-badge delayed">50% Fee</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>No-show</strong>
+                <div class="dash-list-sub">Full session fee applies; medical clearance waives the charge.</div>
+              </div>
+              <span class="status-badge cancelled">Full Fee</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 4: PERFORMANCE TRACKER
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-performance-tracker">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">ATHLETE <span>PERFORMANCE TRACKER</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Physical benchmarks, sprint acceleration curve, cardiovascular endurance, and coach evaluations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benchmarks Grid -->
+        <div class="dash-stats-grid" style="margin-bottom:2rem;">
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">34.2 km/h</div>
+              <div class="metric-label">Max Sprint Velocity</div>
+              <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">trending_up</span><span>Top 5% in Age Bracket</span></div>
+            </div>
+            <div class="metric-icon-box"><span class="material-symbols-outlined">bolt</span></div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">62 mL/kg</div>
+              <div class="metric-label">VO2 Max Aerobic Engine</div>
+              <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">favorite</span><span>Elite Recovery Rating</span></div>
+            </div>
+            <div class="metric-icon-box"><span class="material-symbols-outlined">ecg_heart</span></div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">32.5 in</div>
+              <div class="metric-label">Vertical Leap</div>
+              <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">arrow_upward</span><span>+3.2 in this season</span></div>
+            </div>
+            <div class="metric-icon-box"><span class="material-symbols-outlined">height</span></div>
+          </div>
+
+          <div class="metric-card">
+            <div>
+              <div class="metric-value">2.1x BW</div>
+              <div class="metric-label">Squat Strength Ratio</div>
+              <div class="metric-trend"><span class="material-symbols-outlined" style="font-size:16px;">fitness_center</span><span>Olympic Standard</span></div>
+            </div>
+            <div class="metric-icon-box"><span class="material-symbols-outlined">sports_martial_arts</span></div>
+          </div>
+        </div>
+
+        <!-- Weekly Training Volume Chart -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <span class="material-symbols-outlined">bar_chart</span>
+              <span>WEEKLY TRAINING LOAD & INTENSITY (HOURS)</span>
+            </div>
+            <span style="font-size:0.8rem; color:var(--accent-volt); font-weight:700;">Target: 14 hrs/week</span>
+          </div>
+
+          <div class="chart-container">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:60%;" title="Mon: 2.2 hrs"></div>
+              <span class="chart-label">MON</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:85%;" title="Tue: 3.1 hrs"></div>
+              <span class="chart-label">TUE</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:45%;" title="Wed: 1.6 hrs (Recovery)"></div>
+              <span class="chart-label">WED</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:90%;" title="Thu: 3.4 hrs"></div>
+              <span class="chart-label">THU</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:75%;" title="Fri: 2.8 hrs"></div>
+              <span class="chart-label">FRI</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:100%;" title="Sat: 4.0 hrs (Matchday)"></div>
+              <span class="chart-label">SAT</span>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar" style="height:25%;" title="Sun: 1.0 hr (Active Walk)"></div>
+              <span class="chart-label">SUN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sprint Acceleration Splits -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-header">
+            <div class="dash-panel-title">
+              <span class="material-symbols-outlined">speed</span>
+              <span>Sprint Acceleration Curve (Laser Timed)</span>
+            </div>
+            <span style="font-size:0.8rem; color:var(--accent-volt); font-weight:700;">Season Best: 34.2 km/h</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>0 - 10m Split</strong>
+            <div class="util-meter"><span style="width:78%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">1.72s • 91st percentile</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>0 - 20m Split</strong>
+            <div class="util-meter"><span style="width:86%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">2.98s • 93rd percentile</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Flying 30m Top Speed</strong>
+            <div class="util-meter"><span style="width:94%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">34.2 km/h • Top 5%</span>
+          </div>
+        </div>
+
+        <!-- Strength & Power Matrix -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">fitness_center</span>
+            <span>Strength & Power Matrix</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Back Squat (2.1x BW)</strong>
+            <div class="util-meter"><span style="width:88%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">Olympic Standard</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Clean & Jerk (1.4x BW)</strong>
+            <div class="util-meter"><span style="width:79%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">Elite Range</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Broad Jump Power</strong>
+            <div class="util-meter"><span style="width:84%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">2.91m • +6cm this season</span>
+          </div>
+        </div>
+
+        <!-- Season Milestones -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">emoji_events</span>
+            <span>Season Milestones & Records</span>
+          </div>
+          <div class="achievement-grid">
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">sprint</span>
+              <div>34.2 km/h</div>
+              <small>Personal Best Sprint</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">fitness_center</span>
+              <div>2.1x BW</div>
+              <small>Squat Strength Ratio</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">calendar_month</span>
+              <div>32 Matches</div>
+              <small>Competitive Logged</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">military_tech</span>
+              <div>Gold Tier</div>
+              <small>Academy Ranking</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 5: ACADEMY FACILITIES
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-academy-facilities">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">ACADEMY <span>FACILITIES & ARENAS</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              World-class stadiums, biomechanics labs, and recovery centers available for athlete training.
+            </p>
+          </div>
+        </div>
+
+        <div class="routes-grid">
+          <!-- Facility 1 -->
+          <div class="route-card">
+            <div style="border-radius:var(--radius-md); overflow:hidden; height:160px; margin-bottom:0.5rem;">
+              <img src="./images/arena-1.webp" alt="FIFA Arena A Pitch" class="img-pop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </div>
+            <div class="route-card-header">
+              <span class="route-number">FIFA ARENA A (MAIN TURF)</span>
+              <span class="status-badge ontime">Open 06:00 - 22:00</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">
+              Full 105m x 68m FIFA Quality Pro certified pitch with sub-surface drainage and floodlights.
+            </div>
+            <div class="route-meta-strip">
+              <div><strong>Surface:</strong> Hybrid Turf</div>
+              <div><strong>Capacity:</strong> 500</div>
+              <div><strong>Locker:</strong> Pod 01-04</div>
+            </div>
+            <button class="btn btn-primary btn-sm book-facility-btn" data-arena="FIFA Arena A (Main Turf)">
+              <span class="material-symbols-outlined">event_available</span>
+              <span>Book Session at this Arena</span>
+            </button>
+          </div>
+
+          <!-- Facility 2 -->
+          <div class="route-card">
+            <div style="border-radius:var(--radius-md); overflow:hidden; height:160px; margin-bottom:0.5rem;">
+              <img src="./images/gym-bg.webp" alt="Olympic Strength Lab" class="img-pop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </div>
+            <div class="route-card-header">
+              <span class="route-number">OLYMPIC STRENGTH LAB</span>
+              <span class="status-badge ontime">Open 24/7</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">
+              Linear transducer bar-velocity racks, Olympic lifting platforms, and force plate feedback.
+            </div>
+            <div class="route-meta-strip">
+              <div><strong>Equipment:</strong> Eleiko Pro</div>
+              <div><strong>Capacity:</strong> 60 Athletes</div>
+              <div><strong>Zone:</strong> Sector B</div>
+            </div>
+            <button class="btn btn-primary btn-sm book-facility-btn" data-arena="Olympic Gym Zone B (Strength Lab)">
+              <span class="material-symbols-outlined">event_available</span>
+              <span>Book Session at this Arena</span>
+            </button>
+          </div>
+
+          <!-- Facility 3 -->
+          <div class="route-card">
+            <div style="border-radius:var(--radius-md); overflow:hidden; height:160px; margin-bottom:0.5rem;">
+              <img src="./images/arena-2.webp" alt="Olympic Track Circuit" class="img-pop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </div>
+            <div class="route-card-header">
+              <span class="route-number">OLYMPIC 400M TRACK B</span>
+              <span class="status-badge ontime">Open 06:00 - 21:00</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">
+              8-lane IAAF approved synthetic polyurethane running track with laser-timed sprint gates.
+            </div>
+            <div class="route-meta-strip">
+              <div><strong>Lanes:</strong> 8 IAAF Lanes</div>
+              <div><strong>Timing:</strong> Laser Gates</div>
+              <div><strong>Sector:</strong> Eastfield</div>
+            </div>
+            <button class="btn btn-primary btn-sm book-facility-btn" data-arena="Olympic Track B (Kinetic 400m)">
+              <span class="material-symbols-outlined">event_available</span>
+              <span>Book Session at this Arena</span>
+            </button>
+          </div>
+
+          <!-- Facility 4 -->
+          <div class="route-card">
+            <div style="border-radius:var(--radius-md); overflow:hidden; height:160px; margin-bottom:0.5rem;">
+              <img src="./images/arena-3.webp" alt="Hydro Recovery Spa" class="img-pop" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </div>
+            <div class="route-card-header">
+              <span class="route-number">HYDROTHERAPY RECOVERY SPA</span>
+              <span class="status-badge ontime">Open 08:00 - 20:00</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">
+              Contrast cryo plunge pools (8°C), hot hydro massage, and pneumatic recovery compression.
+            </div>
+            <div class="route-meta-strip">
+              <div><strong>Plunges:</strong> 4 Cryo Pools</div>
+              <div><strong>Sauna:</strong> Infrared</div>
+              <div><strong>Physio:</strong> On Site</div>
+            </div>
+            <button class="btn btn-primary btn-sm book-facility-btn" data-arena="Aquatic Recovery Spa & Pool">
+              <span class="material-symbols-outlined">event_available</span>
+              <span>Book Session at this Arena</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Facility Operating Hours -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">schedule</span>
+            <span>Facility Operating Hours</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>FIFA Arena A (Main Turf)</strong>
+                <div class="dash-list-sub">Hybrid turf • floodlights • elevated viewing stands</div>
+              </div>
+              <span class="status-badge ontime">06:00 - 22:00</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Olympic Strength Lab</strong>
+                <div class="dash-list-sub">Eleiko platforms • bar-velocity racks • force plates</div>
+              </div>
+              <span class="status-badge ontime">Open 24/7</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Olympic 400m Track B</strong>
+                <div class="dash-list-sub">8 IAAF lanes • laser sprint gates</div>
+              </div>
+              <span class="status-badge ontime">06:00 - 21:00</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Hydrotherapy Recovery Spa</strong>
+                <div class="dash-list-sub">Cryo plunges • infrared sauna • physio on site</div>
+              </div>
+              <span class="status-badge ontime">08:00 - 20:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Membership Access Tiers -->
+        <div class="dash-sub-grid" data-anim="fade-up">
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">military_tech</span> Tier 1 • Elite</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Full pitch, gym, track & recovery access. Priority lane booking 14 days ahead.</div>
+            <div class="metric-trend" style="margin-top:0.6rem;"><span class="material-symbols-outlined" style="font-size:16px;">verified</span><span>Current plan</span></div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">workspace_premium</span> Tier 2 • Varsity</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Pitch & gym access. Booking window of 7 days plus 2 free physio consults monthly.</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">group</span> Tier 3 • Development</div>
+            <div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">Open squad sessions & gym during staffed hours. Booking window of 3 days.</div>
+          </div>
+        </div>
+
+        <!-- Arena Etiquette & Safety -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">health_and_safety</span>
+            <span>Arena Etiquette & Safety Protocol</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Arrive 15 minutes early</strong>
+                <div class="dash-list-sub">Complete the biometric wristband sync at the gate kiosk.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Mandatory kit rules</strong>
+                <div class="dash-list-sub">Molded studs on turf, shin guards for contact drills, hydration pack provided.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Report injuries immediately</strong>
+                <div class="dash-list-sub">On-site physio desk is staffed at every facility during opening hours.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 6: NOTIFICATIONS
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-notifications">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">COACHING <span>NOTIFICATIONS & ALERTS</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Training session confirmations, trial invites, medical clearances, and tactical bulletins.
+            </p>
+          </div>
+          <button class="btn btn-outline btn-sm" id="markAllNotifsRead">
+            <span class="material-symbols-outlined">mark_email_read</span>
+            <span>Mark All as Read</span>
+          </button>
+        </div>
+
+        <div class="dash-panel">
+          <div class="notif-list">
+            <div class="notif-card unread">
+              <div class="notif-icon-box">
+                <span class="material-symbols-outlined">verified</span>
+              </div>
+              <div style="flex:1;">
+                <div class="notif-title">Training Slot Confirmed: Striker Masterclass</div>
+                <div class="notif-desc">Your spot in Coach Marcus Stone's Varsity Striker Finishing drill is confirmed for 2026-09-15 at 08:30 AM (FIFA Arena A).</div>
+                <div class="notif-time">10 minutes ago</div>
+              </div>
+            </div>
+
+            <div class="notif-card unread">
+              <div class="notif-icon-box">
+                <span class="material-symbols-outlined">fitness_center</span>
+              </div>
+              <div style="flex:1;">
+                <div class="notif-title">Biometric Velocity Baseline Updated</div>
+                <div class="notif-desc">Your barbell speed test recorded 1.42 m/s. Training threshold updated in Olympic Strength Lab Zone B.</div>
+                <div class="notif-time">2 hours ago</div>
+              </div>
+            </div>
+
+            <div class="notif-card">
+              <div class="notif-icon-box">
+                <span class="material-symbols-outlined">emoji_events</span>
+              </div>
+              <div style="flex:1;">
+                <div class="notif-title">UEFA Youth Cup Showcase Selection</div>
+                <div class="notif-desc">You have been selected for the October 15 Academy Showcase Match against FC Porto Youth. Bring white match kit.</div>
+                <div class="notif-time">Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter by Category -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">filter_alt</span>
+            <span>Filter by Category</span>
+          </div>
+          <div class="dash-chip-row" style="margin-bottom:0;">
+            <span class="dash-chip active"><span class="material-symbols-outlined">notifications</span>All Alerts</span>
+            <span class="dash-chip"><span class="material-symbols-outlined">event_available</span>Sessions</span>
+            <span class="dash-chip"><span class="material-symbols-outlined">fitness_center</span>Biometrics</span>
+            <span class="dash-chip"><span class="material-symbols-outlined">emoji_events</span>Showcases</span>
+            <span class="dash-chip"><span class="material-symbols-outlined">health_and_safety</span>Medical</span>
+          </div>
+        </div>
+
+        <!-- Priority Inbox Summary -->
+        <div class="dash-sub-grid" data-anim="fade-up">
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">mark_email_unread</span> Unread Alerts</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">Awaiting your attention</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">priority_high</span> High Priority</div>
+            <div class="metric-value">1</div>
+            <div class="metric-label">Medical clearance update</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">inbox</span> Total This Week</div>
+            <div class="metric-value">7</div>
+            <div class="metric-label">Coaching & academy alerts</div>
+          </div>
+        </div>
+
+        <!-- Notification Preferences -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">settings</span>
+            <span>Notification Preferences</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Session confirmations & reminders</strong>
+                <div class="dash-list-sub">Pushed 2 hours before every booked slot.</div>
+              </div>
+              <span class="status-badge ontime">Enabled</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Biometric & readiness updates</strong>
+                <div class="dash-list-sub">Weekly velocity, VO2 and recovery summaries.</div>
+              </div>
+              <span class="status-badge ontime">Enabled</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Trial invites & scout bulletins</strong>
+                <div class="dash-list-sub">Only for showcase selections and pro scouting days.</div>
+              </div>
+              <span class="status-badge ontime">Enabled</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 7: PROFILE
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-profile">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">ATHLETE <span>PASSPORT & BIO</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Academy registration credentials, physical profile, and performance records.
+            </p>
+          </div>
+          <button class="btn btn-outline btn-sm" data-jump-tab="settings">
+            <span class="material-symbols-outlined">edit</span>
+            <span>Edit Profile in Settings</span>
+          </button>
+        </div>
+
+        <div class="dash-panel" style="max-width:720px;">
+          <div style="display:flex; align-items:center; gap:1.5rem; margin-bottom:2rem; flex-wrap:wrap;">
+            <div style="width:84px; height:84px; border-radius:50%; background:var(--bg-surface); border:3px solid var(--accent-volt); display:flex; align-items:center; justify-content:center; color:var(--accent-volt);">
+              <span class="material-symbols-outlined" style="font-size:42px;">sports_handball</span>
+            </div>
+            <div>
+              <h2 id="profileCardName" style="font-family:var(--font-heading); font-size:2rem; color:var(--text-pure); line-height:1.1;">
+                Alexander Vance
+              </h2>
+              <!-- Display exact email without truncation -->
+              <div id="profileCardEmail" style="color:var(--text-secondary); font-size:0.9rem; word-break:break-all;">
+                alexander.vance@elite.com
+              </div>
+              <div style="margin-top:0.4rem;">
+                <span id="profileCardRole" class="dash-user-role-badge role-user">ATHLETE / MEMBER</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-form-grid" style="border-top:1px solid var(--border-color); padding-top:1.5rem; margin-bottom:1.5rem;">
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Athlete Passport ID</div>
+              <div style="font-weight:700; color:var(--text-pure); font-size:1.05rem; margin-top:0.2rem;">#STK-ATH-8802</div>
+            </div>
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Contact Phone</div>
+              <div id="profileCardPhone" style="font-weight:700; color:var(--text-pure); font-size:1.05rem; margin-top:0.2rem;">+1 (555) 234-8901</div>
+            </div>
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Primary Sport & Position</div>
+              <div style="font-weight:700; color:var(--text-pure); font-size:1.05rem; margin-top:0.2rem;">Football • Center Forward</div>
+            </div>
+            <div>
+              <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Clearance Level</div>
+              <div style="margin-top:0.2rem;"><span class="fixture-status-pill status-live">Full Medical Clearance</span></div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-surface); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+            <div style="font-weight:700; color:var(--text-pure); font-size:0.95rem; margin-bottom:0.4rem;">Academy Season Overview</div>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+              Currently enrolled in STACKLY Elite Performance Program (Tier 1). Gold ranking athlete with 98.4% attendance and 32 competitive matches logged.
+            </p>
+          </div>
+        </div>
+
+        <!-- Athlete Achievements -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">military_tech</span>
+            <span>Athlete Achievements</span>
+          </div>
+          <div class="achievement-grid">
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">emoji_events</span>
+              <div>Golden Boot</div>
+              <small>U19 League Top Scorer</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">bolt</span>
+              <div>Speed Demon</div>
+              <small>Fastest 30m Sprint 2026</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">fitness_center</span>
+              <div>Iron Athlete</div>
+              <small>500kg Total Club</small>
+            </div>
+            <div class="achievement-item">
+              <span class="material-symbols-outlined">health_and_safety</span>
+              <div>Ironman</div>
+              <small>300 Days Injury Free</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendance & Dedication Record -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">fact_check</span>
+            <span>Attendance & Dedication Record</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Session Attendance</strong>
+            <div class="util-meter"><span style="width:98%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">98.4% • 126/128 sessions</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Punctuality</strong>
+            <div class="util-meter"><span style="width:94%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">94% on-time arrivals</span>
+          </div>
+          <div class="util-meter-row">
+            <strong>Recovery Compliance</strong>
+            <div class="util-meter"><span style="width:91%;"></span></div>
+            <span style="font-size:0.8rem; color:var(--text-secondary);">91% sleep & nutrition logged</span>
+          </div>
+        </div>
+
+        <!-- Physical Profile -->
+        <div class="dash-sub-grid" data-anim="fade-up">
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">straighten</span> Height</div>
+            <div class="metric-value">185 cm</div>
+            <div class="metric-label">Measured at season intake</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">monitor_weight</span> Body Mass</div>
+            <div class="metric-value">78.4 kg</div>
+            <div class="metric-label">Lean mass 68.2 kg</div>
+          </div>
+          <div class="dash-mini-card">
+            <div class="dash-mini-card-title"><span class="material-symbols-outlined">heart_bpm</span> Resting Heart Rate</div>
+            <div class="metric-value">48 bpm</div>
+            <div class="metric-label">Elite aerobic baseline</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 8: SETTINGS (Synchronizes Top Right & Sidebar Profiles)
+           =================================================================== -->
+      <section class="dash-view-tab" id="tab-settings">
+        <div class="dash-page-header">
+          <div>
+            <h1 class="dash-page-title">ACCOUNT <span>SETTINGS</span></h1>
+            <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.25rem;">
+              Update personal athlete credentials, phone, password, and portal synchronization.
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-panel" style="max-width:720px;">
+          <form id="dashSettingsForm" novalidate>
+            <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+              <!-- Name Input -->
+              <div class="form-group">
+                <label for="settingsName">
+                  <span class="material-symbols-outlined">person</span>
+                  <span>Full Name</span>
+                </label>
+                <input type="text" id="settingsName" class="form-control" required value="Alexander Vance">
+              </div>
+
+              <!-- Exact Email Displayed (Readonly for identity security) -->
+              <div class="form-group">
+                <label for="settingsEmail">
+                  <span class="material-symbols-outlined">mail</span>
+                  <span>Exact Email Address</span>
+                </label>
+                <input type="email" id="settingsEmail" class="form-control" readonly style="opacity:0.8; cursor:not-allowed;" value="alexander.vance@elite.com">
+                <span style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem; display:block;">Primary athlete portal identity</span>
+              </div>
+            </div>
+
+            <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="settingsPhone">
+                  <span class="material-symbols-outlined">call</span>
+                  <span>Phone Number</span>
+                </label>
+                <input type="tel" id="settingsPhone" class="form-control" placeholder="+1 (555) 000-0000">
+              </div>
+
+              <!-- Notifications Preference -->
+              <div class="form-group">
+                <label for="settingsNotifPref">
+                  <span class="material-symbols-outlined">notifications</span>
+                  <span>Alert Preference</span>
+                </label>
+                <select id="settingsNotifPref" class="form-select">
+                  <option value="all" selected>All Session & Coach Alerts</option>
+                  <option value="important">Trial Invites & Emergency Only</option>
+                  <option value="none">Mute Notifications</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color);">
+              <h3 style="font-family:var(--font-heading); font-size:1.2rem; color:var(--text-pure); margin-bottom:1rem;">
+                CHANGE PASSWORD (OPTIONAL)
+              </h3>
+              <div class="dash-form-grid" style="margin-bottom:1.5rem;">
+                <div class="form-group">
+                  <label for="settingsNewPass">
+                    <span class="material-symbols-outlined">lock</span>
+                    <span>New Password</span>
+                  </label>
+                  <input type="password" id="settingsNewPass" class="form-control" placeholder="Min 6 characters">
+                </div>
+
+                <div class="form-group">
+                  <label for="settingsConfirmPass">
+                    <span class="material-symbols-outlined">lock_reset</span>
+                    <span>Confirm New Password</span>
+                  </label>
+                  <input type="password" id="settingsConfirmPass" class="form-control" placeholder="Repeat new password">
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:2rem;">
+              <button type="submit" class="btn btn-primary" style="padding:0.85rem 2rem;">
+                <span class="material-symbols-outlined">save</span>
+                <span>Save Profile Changes</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Account Security Status -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">security</span>
+            <span>Account Security Status</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Two-factor authentication</strong>
+                <div class="dash-list-sub">Authenticator app linked to your athlete passport.</div>
+              </div>
+              <span class="status-badge ontime">Active</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Password strength</strong>
+                <div class="dash-list-sub">Last changed 41 days ago • Strong complexity.</div>
+              </div>
+              <span class="status-badge ontime">Strong</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Recovery contact</strong>
+                <div class="dash-list-sub">Guardian email on file for account recovery.</div>
+              </div>
+              <span class="status-badge active">Verified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linked & Active Sessions -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">devices</span>
+            <span>Linked & Active Sessions</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Chrome • Windows (Current)</strong>
+                <div class="dash-list-sub">Elite Stadium Complex • This device</div>
+              </div>
+              <span class="status-badge ontime">Active Now</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Safari • iPhone 16 Pro</strong>
+                <div class="dash-list-sub">Last active 2 hours ago</div>
+              </div>
+              <span class="status-badge active">Trusted</span>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Chrome • Stadium Kiosk Tablet</strong>
+                <div class="dash-list-sub">Biometric gate kiosk • Arena Gate 4</div>
+              </div>
+              <span class="status-badge active">Trusted</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & Privacy -->
+        <div class="dash-panel" data-anim="fade-up">
+          <div class="dash-panel-title" style="margin-bottom:1.25rem;">
+            <span class="material-symbols-outlined">shield</span>
+            <span>Data & Privacy</span>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div>
+                <strong>Training & biometric data</strong>
+                <div class="dash-list-sub">Shared with coaching staff only. Never sold to third parties.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Medical clearance records</strong>
+                <div class="dash-list-sub">Encrypted at rest. Access logged and audited.</div>
+              </div>
+            </div>
+            <div class="dash-list-row">
+              <div>
+                <strong>Export my data</strong>
+                <div class="dash-list-sub">Download a full copy of your academy records anytime.</div>
+              </div>
+              <button class="btn btn-outline btn-sm" type="button">
+                <span class="material-symbols-outlined">download</span>
+                <span>Export</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="padding:1.5rem 2rem; border-top:1px solid var(--border-color); background:var(--bg-surface); font-size:0.85rem; color:var(--text-muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>&copy; 2026 STACKLY Sports Academy • High-Performance Athletic Infrastructure</div>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="404.html" style="color:var(--text-secondary);">Academy Code</a>
+        <a href="404.html" style="color:var(--text-secondary);">Medical Protocols</a>
+        <a href="contact.html" style="color:var(--accent-volt);">Coach Helpdesk</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>

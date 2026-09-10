@@ -1,0 +1,363 @@
+/* ==========================================================================
+   STACKLY SPORTS ACADEMY - RESPONSIVE STYLESHEET
+   Breakpoints: 1920px, 1440px, 1024px, 768px, 425px, 375px, 320px
+   Zero horizontal scroll, resilient forms, mobile navigation drawer
+   ========================================================================== */
+
+/* --- Large Desktops (1440px to 1920px+) --- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+/* --- Laptops & Small Desktops (1024px to 1279px) --- */
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .slot-search-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .slot-search-form .btn {
+    grid-column: span 2;
+  }
+}
+
+/* --- Tablets (768px to 1023px) --- */
+@media (max-width: 1023px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-actions .btn {
+    display: none;
+  }
+
+  .mobile-hamburger {
+    display: inline-flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-visual-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fixture-row {
+    grid-template-columns: 1fr 100px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .fixture-time {
+    grid-column: span 3;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+  }
+
+  .fixture-status-pill {
+    grid-column: span 3;
+    justify-self: center;
+    margin-top: 0.5rem;
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cta-actions {
+    align-items: center;
+  }
+
+  .stat-box {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .stat-box:last-child {
+    border-bottom: none;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Mobile Landscape & Large Phones (426px to 767px) --- */
+@media (max-width: 767px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .grid-3, .grid-4, .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-highlights {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .slot-search-wrap {
+    margin-top: 0;
+    padding: 1.25rem;
+  }
+
+  .slot-search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-search-form .btn {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lifting-animation-widget {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 1rem;
+    border-radius: var(--radius-md);
+    flex-wrap: wrap;
+  }
+
+  .lifting-avatar-box {
+    width: 54px;
+    height: 62px;
+  }
+
+  .lifting-avatar-img,
+  .lifting-pulse-ring {
+    width: 54px;
+    height: 54px;
+  }
+
+  .lifting-pulse-ring {
+    margin-left: -27px;
+  }
+
+  .lifting-ground-shadow {
+    width: 40px;
+  }
+
+  .lifting-rep-counter {
+    min-width: 52px;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .lifting-rep-counter span {
+    font-size: 1.1rem;
+  }
+
+  .hero-visual-img {
+    height: 340px;
+  }
+}
+
+/* --- Standard Mobile (375px to 425px) --- */
+@media (max-width: 425px) {
+  .header-container {
+    height: 70px;
+  }
+
+  .nav-logo-img {
+    height: 38px;
+  }
+
+  .hero-section {
+    padding-top: 95px;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .hero-btn-group .btn {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .service-card-body {
+    padding: 1.25rem;
+  }
+
+  .service-card-title {
+    font-size: 1.4rem;
+  }
+
+  .arena-card {
+    height: 280px;
+  }
+
+  .arena-content {
+    padding: 1.25rem;
+  }
+
+  .cta-banner {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .mobile-nav-drawer {
+    width: 85%;
+    max-width: 300px;
+  }
+}
+
+/* --- Small Mobile (320px to 374px) --- */
+@media (max-width: 374px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .highlight-num {
+    font-size: 1.8rem;
+  }
+
+  .nav-logo-img {
+    height: 32px;
+  }
+
+  .form-control, .form-select {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .fixture-team {
+    font-size: 0.9rem;
+  }
+
+  .fixture-score {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* --- Universal Overflow Shield --- */
+*, *:before, *:after {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+/* --- Topbar Logout Button Responsive --- */
+@media (max-width: 1023px) {
+  .dash-topbar-logout {
+    width: 36px;
+    height: 36px;
+  }
+  .dash-topbar-logout .material-symbols-outlined {
+    font-size: 20px;
+  }
+}
+
+/* --- Cinematic Shoe Lacing Section Responsive --- */
+@media (max-width: 767px) {
+  #shoeLaceSection .exp-track {
+    height: 380vh;
+  }
+  #shoeLaceSection .browser-frame {
+    width: 96vw;
+    aspect-ratio: auto;
+    height: min(70vh, 600px);
+  }
+  #shoeLaceSection .shoe-container {
+    width: 90vw;
+    height: 65vw;
+  }
+  #shoeLaceSection .tightness-bar {
+    width: 140px;
+  }
+  #shoeLaceSection .exp-chrome-url { padding: 3px 14px; font-size: 10px; }
+  #shoeLaceSection .exp-chrome-actions { display: none; }
+}
+
+@media (max-width: 425px) {
+  #shoeLaceSection .shoe-container {
+    width: 95vw;
+    height: 70vw;
+  }
+  #shoeLaceSection .shoe-scroll-hint {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+}

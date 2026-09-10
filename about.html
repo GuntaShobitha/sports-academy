@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About STACKLY Sports Academy | Heritage, Vision & Leadership</title>
+  <meta name="description" content="Discover STACKLY Sports Academy's mission, history, UEFA-certified leadership, and state-of-the-art facilities dedicated to building global sports leaders.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Reading Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-emblem">
+      <div class="loader-ring"></div>
+      <span class="material-symbols-outlined loader-icon">fitness_center</span>
+    </div>
+    <div class="loader-text">STACKLY ACADEMY</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">
+          <span class="material-symbols-outlined">login</span>
+          <span>Login</span>
+        </a>
+        <a href="register.html" class="btn btn-primary btn-sm">
+          <span class="material-symbols-outlined">how_to_reg</span>
+          <span>Join Academy</span>
+        </a>
+        <button class="mobile-hamburger" aria-label="Open Mobile Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="nav-logo">
+        <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+      </a>
+      <button class="mobile-drawer-close" aria-label="Close Menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </a>
+      <a href="about.html" class="mobile-drawer-link active">
+        <span class="material-symbols-outlined">info</span>
+        <span>About</span>
+      </a>
+      <a href="services.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">sports</span>
+        <span>Services</span>
+      </a>
+      <a href="blog.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">article</span>
+        <span>Blog</span>
+      </a>
+      <a href="contact.html" class="mobile-drawer-link">
+        <span class="material-symbols-outlined">alternate_email</span>
+        <span>Contact</span>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-actions">
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">
+        <span class="material-symbols-outlined">login</span>
+        <span>Login to Portal</span>
+      </a>
+      <a href="register.html" class="btn btn-outline" style="width: 100%;">
+        <span class="material-symbols-outlined">person_add</span>
+        <span>Register Athlete</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: Company / Academy Overview Hero with Background Video -->
+    <section class="hero-section" style="min-height:70vh; padding-bottom:3rem; position:relative; overflow:hidden;">
+      <!-- Background Video -->
+      <video class="about-hero-video" autoplay muted loop playsinline poster="./images/hero-athlete.webp" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+        <source src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      </video>
+      <!-- Dark overlay with gradient -->
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(9,12,16,0.6) 0%, rgba(9,12,16,0.75) 50%, rgba(9,12,16,0.95) 100%); z-index:1;"></div>
+      <!-- Grid overlay -->
+      <div class="hero-bg-grid" style="z-index:1;"></div>
+      <!-- Content -->
+      <div class="container" style="position:relative; z-index:2; text-align:center; max-width:850px;">
+        <div class="section-tag" style="animation: fadeInDown 0.8s ease both;">
+          <span class="material-symbols-outlined">stars</span>
+          <span>Our Legacy & Heritage</span>
+        </div>
+        <h1 class="hero-title" style="font-size:clamp(2.5rem, 6vw, 4.2rem); margin-bottom:1.2rem; animation: fadeInUp 0.9s ease 0.2s both;">
+          BUILT FOR <span class="glow-text">GREATNESS</span>.<br>COMMITTED TO EXCELLENCE.
+        </h1>
+        <p class="hero-desc" style="margin:0 auto 2rem auto; animation: fadeInUp 0.9s ease 0.4s both;">
+          Founded in 2012, STACKLY Sports Academy stands at the vanguard of modern athletic development, combining European sporting pedagogy with cutting-edge sports biomechanics.
+        </p>
+        <div style="animation: fadeInUp 0.9s ease 0.6s both;">
+          <a href="services.html" class="btn btn-primary">
+            <span class="material-symbols-outlined">sports</span>
+            <span>Explore Our Disciplines</span>
+          </a>
+        </div>
+      </div>
+      <!-- Scroll indicator -->
+      <div style="position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:2; animation: bounceDown 2s ease infinite;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
+          <span style="font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted);">Scroll</span>
+          <span class="material-symbols-outlined" style="color:var(--accent-volt); font-size:20px;">expand_more</span>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @keyframes fadeInUp {
+        from { opacity:0; transform:translateY(30px); }
+        to { opacity:1; transform:translateY(0); }
+      }
+      @keyframes fadeInDown {
+        from { opacity:0; transform:translateY(-20px); }
+        to { opacity:1; transform:translateY(0); }
+      }
+      @keyframes bounceDown {
+        0%, 100% { transform:translateX(-50%) translateY(0); }
+        50% { transform:translateX(-50%) translateY(8px); }
+      }
+      /* Pause video when not visible for performance */
+      .about-hero-video { transition: opacity 0.5s ease; }
+    </style>
+
+    <!-- SECTION 2: History -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="grid-2" style="align-items:center;">
+          <div class="reveal-init">
+            <div class="section-tag">
+              <span class="material-symbols-outlined">history_edu</span>
+              <span>Our Genesis</span>
+            </div>
+            <h2 class="section-title">THE <span>STACKLY</span> STORY</h2>
+            <p class="section-subtitle" style="margin-bottom:1.5rem;">
+              What started as a grassroots football camp on a single turf has evolved into a premier international multi-sport institute spanning 35 acres and cultivating elite Olympians and pro soccer athletes.
+            </p>
+            <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:1.5rem;">
+              Our founders recognized that athletic potential was frequently bottlenecked by outdated coaching paradigms and lack of integrated sports medicine. By uniting former international competitors, licensed physiotherapists, and tactical data analysts under one roof, STACKLY established a new standard in holistic athlete sculpting.
+            </p>
+            <div style="display:flex; gap:2rem;">
+              <div>
+                <div style="font-family:var(--font-heading); font-size:2.2rem; color:var(--accent-volt);">2012</div>
+                <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Foundation Year</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading); font-size:2.2rem; color:var(--accent-gold);">14+</div>
+                <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Years of Mastery</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-init">
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-lg);">
+              <img src="./images/service-1.webp" alt="Historic football squad training" style="width:100%; height:400px; object-fit:cover;" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Vision -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color);">
+      <div class="container">
+        <div class="grid-2" style="align-items:center;">
+          <div class="reveal-init" style="order:2;">
+            <div class="section-tag">
+              <span class="material-symbols-outlined">visibility</span>
+              <span>Forward Horizon</span>
+            </div>
+            <h2 class="section-title">OUR <span>VISION</span></h2>
+            <p class="section-subtitle" style="margin-bottom:1.5rem;">
+              To be recognized globally as the paramount benchmark for sustainable athletic progression, where raw talent is transformed into disciplined, ethical champions who redefine the standard of international sports.
+            </p>
+            <ul style="display:flex; flex-direction:column; gap:1rem; color:var(--text-secondary);">
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Bridging grassroots talent directly to professional sporting leagues</span>
+              </li>
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Pioneering biomechanical and AI-assisted performance diagnostics</span>
+              </li>
+              <li style="display:flex; align-items:center; gap:0.75rem;">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt);">check_circle</span>
+                <span>Promoting character, academic integrity, and sportsmanship</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal-init" style="order:1;">
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-lg);">
+              <img src="./images/service-4.webp" alt="Tactical visionary sports analysis" style="width:100%; height:380px; object-fit:cover;" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Mission -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="grid-2" style="align-items:center;">
+          <div class="reveal-init">
+            <div class="section-tag">
+              <span class="material-symbols-outlined">flag</span>
+              <span>Our Purpose</span>
+            </div>
+            <h2 class="section-title">OUR CORE <span>MISSION</span></h2>
+            <p class="section-subtitle" style="margin-bottom:1.5rem;">
+              We deliver rigorous, scientifically validated athletic conditioning coupled with empathetic mentorship, ensuring that every enrolled athlete discovers their highest physical, mental, and tactical threshold.
+            </p>
+            <div class="grid-2" style="gap:1.5rem;">
+              <div style="background:var(--bg-card); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                <span class="material-symbols-outlined" style="color:var(--accent-volt); font-size:28px;">psychology</span>
+                <h4 style="font-family:var(--font-heading); font-size:1.2rem; color:var(--text-pure); margin-top:0.5rem;">Mental Resilience</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.3rem;">Developing poise under extreme championship pressure.</p>
+              </div>
+              <div style="background:var(--bg-card); padding:1.25rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                <span class="material-symbols-outlined" style="color:var(--accent-gold); font-size:28px;">fitness_center</span>
+                <h4 style="font-family:var(--font-heading); font-size:1.2rem; color:var(--text-pure); margin-top:0.5rem;">Physical Supremacy</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.3rem;">Maximizing neuromuscular explosive kinetic chain output.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-init">
+            <div style="border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-lg);">
+              <img src="./images/athlete-lifting.webp" alt="Athlete training mission" style="width:100%; height:380px; object-fit:cover;" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: BENTO GALLERY - Scroll Scrubbed Sports Grid -->
+    <section class="bento-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">sports_soccer</span>
+            <span>Our World</span>
+          </div>
+          <h2 class="section-title">THE STACKLY <span>EXPERIENCE</span></h2>
+          <p class="section-subtitle">Scroll to explore our facilities, athletes, and championship moments.</p>
+        </div>
+
+        <div class="bento-grid" id="bentoGrid">
+          <!-- Large Featured Card -->
+          <div class="bento-card bento-large" data-speed="0.8">
+            <img src="./images/hero-athlete.webp" alt="Athlete training" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Featured</span>
+              <h3>Elite Training Sessions</h3>
+              <p>UEFA-certified coaching on FIFA-standard hybrid pitches</p>
+            </div>
+          </div>
+
+          <!-- Medium Card -->
+          <div class="bento-card bento-medium" data-speed="1.2">
+            <img src="./images/service-2.webp" alt="Strength training" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Strength</span>
+              <h3>Olympic Strength Lab</h3>
+            </div>
+          </div>
+
+          <!-- Small Card -->
+          <div class="bento-card bento-small" data-speed="0.6">
+            <img src="./images/arena-1.webp" alt="FIFA Arena" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Facility</span>
+              <h3>FIFA Arena A</h3>
+            </div>
+          </div>
+
+          <!-- Small Card -->
+          <div class="bento-card bento-small" data-speed="1.4">
+            <img src="./images/service-6.webp" alt="Speed training" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Speed</span>
+              <h3>Sprint Lab</h3>
+            </div>
+          </div>
+
+          <!-- Medium Card -->
+          <div class="bento-card bento-medium" data-speed="0.9">
+            <img src="./images/coach-1.webp" alt="Coach Marcus" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Leadership</span>
+              <h3>Coach Marcus Stone</h3>
+              <p>UEFA Pro Licensed Head Director</p>
+            </div>
+          </div>
+
+          <!-- Large Card -->
+          <div class="bento-card bento-large" data-speed="1.1">
+            <img src="./images/service-1.webp" alt="Football match" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Matchday</span>
+              <h3>Championship Fixtures</h3>
+              <p>International youth tournaments and pro showcase friendlies</p>
+            </div>
+          </div>
+
+          <!-- Small Card -->
+          <div class="bento-card bento-small" data-speed="0.7">
+            <img src="./images/arena-3.webp" alt="Basketball court" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Basketball</span>
+              <h3>Hardcourt Dome</h3>
+            </div>
+          </div>
+
+          <!-- Medium Card -->
+          <div class="bento-card bento-medium" data-speed="1.3">
+            <img src="./images/service-5.webp" alt="Goalkeeper training" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Specialist</span>
+              <h3>Goalkeeper Academy</h3>
+              <p>Elite shot-stopping and distribution masterclass</p>
+            </div>
+          </div>
+
+          <!-- Small Card -->
+          <div class="bento-card bento-small" data-speed="0.5">
+            <img src="./images/arena-4.webp" alt="Floodlit turf" loading="lazy">
+            <div class="bento-card-overlay"></div>
+            <div class="bento-card-content">
+              <span class="bento-card-tag">Night</span>
+              <h3>Floodlit Complex</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Sports Academy Network & Infrastructure -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">hub</span>
+            <span>Worldwide Reach</span>
+          </div>
+          <h2 class="section-title">GLOBAL ACADEMY <span>NETWORK</span></h2>
+          <p class="section-subtitle">
+            Connected across 4 regional training hubs with reciprocal partnerships with elite football academies across Spain, Germany, England, and the United States.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">location_city</span>
+            <h3 class="safety-title">HQ Arena Complex</h3>
+            <p class="safety-desc">Olympic Boulevard, 35-Acre Flagship facility hosting 6 hybrid pitches and strength lab.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">sports_soccer</span>
+            <h3 class="safety-title">European Training Hub</h3>
+            <p class="safety-desc">Barcelona Regional Center with full UEFA coaching staff and scouting showcase friendlies.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">fitness_center</span>
+            <h3 class="safety-title">High-Altitude Camp</h3>
+            <p class="safety-desc">Alpine conditioning camp engineered for oxygen-efficiency and VO2 max expansion.</p>
+          </div>
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon">sports_basketball</span>
+            <h3 class="safety-title">Indoor Hardcourt Hub</h3>
+            <p class="safety-desc">Dedicated FIBA hardwood academy complex with continuous shooting analytics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Leadership & Elite Coaching Staff -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">badge</span>
+            <span>Elite Mentors</span>
+          </div>
+          <h2 class="section-title">ACADEMY <span>LEADERSHIP</span> & DIRECTORS</h2>
+          <p class="section-subtitle">
+            Learn from veterans who have commanded touchlines at the FIFA World Cup, Olympic Games, and European Champions League.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Coach 1 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media" style="height:260px;">
+              <img src="./images/coach-1.webp" alt="Coach Marcus Stone portrait" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Head Director</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title" style="font-size:1.3rem;">Coach Marcus Stone</h3>
+              <div style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;">UEFA Pro Licensed</div>
+              <p class="service-card-desc" style="font-size:0.85rem;">Former Premier League tactical analyst with 18 years developing youth national talent.</p>
+            </div>
+          </div>
+
+          <!-- Coach 2 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media" style="height:260px;">
+              <img src="./images/coach-2.webp" alt="Elena Rostova portrait" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Strength Lead</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title" style="font-size:1.3rem;">Elena Rostova</h3>
+              <div style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;">Olympic S&C Specialist</div>
+              <p class="service-card-desc" style="font-size:0.85rem;">Master in Human Kinetics, preparing national sprinters and pro soccer squads for peak power.</p>
+            </div>
+          </div>
+
+          <!-- Coach 3 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media" style="height:260px;">
+              <img src="./images/coach-3.webp" alt="David Sterling portrait" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Chief Scout</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title" style="font-size:1.3rem;">David Sterling</h3>
+              <div style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;">Global Scout Director</div>
+              <p class="service-card-desc" style="font-size:0.85rem;">Facilitated over 120 professional contracts with European and American top-tier clubs.</p>
+            </div>
+          </div>
+
+          <!-- Coach 4 -->
+          <div class="service-card reveal-init">
+            <div class="service-card-media" style="height:260px;">
+              <img src="./images/coach-4.webp" alt="Dr. Maya Vance portrait" class="service-card-img" loading="lazy">
+              <span class="service-card-badge">Sports Medicine</span>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title" style="font-size:1.3rem;">Dr. Maya Vance</h3>
+              <div style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase; margin-bottom:0.5rem;">Chief Medical Officer</div>
+              <p class="service-card-desc" style="font-size:0.85rem;">Renowned sports physio specializing in ligament preservation and neuromuscular rehabilitation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Timeline of Milestones -->
+    <section class="section-padding" style="background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">timeline</span>
+            <span>Historical Path</span>
+          </div>
+          <h2 class="section-title">ACADEMY <span>TIMELINE</span></h2>
+          <p class="section-subtitle">A decade of continuous innovation and championship milestones.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-volt);">event</span>
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--accent-volt);">2012</div>
+            <h4 class="safety-title" style="font-size:1.2rem;">Academy Founded</h4>
+            <p class="safety-desc">Inaugural cohort of 40 young footballers begins training with UEFA licensed staff.</p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-volt);">stadium</span>
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--accent-volt);">2016</div>
+            <h4 class="safety-title" style="font-size:1.2rem;">Olympic Complex</h4>
+            <p class="safety-desc">Expansion to 35-acre stadium complex including high-performance gym and hydrotherapy.</p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-volt);">public</span>
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--accent-volt);">2020</div>
+            <h4 class="safety-title" style="font-size:1.2rem;">European Hub</h4>
+            <p class="safety-desc">Launch of Barcelona scouting center and bi-annual international tournament tours.</p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-volt);">military_tech</span>
+            <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--accent-volt);">2026</div>
+            <h4 class="safety-title" style="font-size:1.2rem;">Global Benchmark</h4>
+            <p class="safety-desc">Over 5,000 enrolled athletes and 150+ professional club contracts achieved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Achievements & Trophy Cabinet -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-init">
+          <div class="section-tag">
+            <span class="material-symbols-outlined">emoji_events</span>
+            <span>Trophy Cabinet</span>
+          </div>
+          <h2 class="section-title">HONORS & <span>ACCREDITATIONS</span></h2>
+          <p class="section-subtitle">Our squads compete at the highest tier of international youth and pro-development football.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-gold);">trophy</span>
+            <h3 class="safety-title">42 National & Continental Titles</h3>
+            <p class="safety-desc">Champions of the International Youth Cup, National Youth League, and Continental Showcase.</p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-gold);">verified</span>
+            <h3 class="safety-title">FIFA 5-Star Facility Rating</h3>
+            <p class="safety-desc">Accredited training pitches meeting international top-tier turf resiliency and player welfare metrics.</p>
+          </div>
+
+          <div class="safety-card reveal-init">
+            <span class="material-symbols-outlined safety-icon" style="color:var(--accent-gold);">school</span>
+            <h3 class="safety-title">100% Collegiate Placement</h3>
+            <p class="safety-desc">Every graduating student-athlete seeking collegiate path secured NCAA or NAIA athletic commitments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CTA Banner -->
+    <section class="section-padding" style="padding-bottom:0;">
+      <div class="container">
+        <div class="cta-banner reveal-init">
+          <div class="cta-grid">
+            <div>
+              <h2 class="cta-title">JOIN OUR <span>CHAMPIONSHIP</span> LEGACY</h2>
+              <p class="cta-desc">
+                Ready to take your game to the international level? Connect with our coaching admissions team today.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a href="register.html" class="btn btn-primary" style="width:100%;">
+                <span class="material-symbols-outlined">bolt</span>
+                <span>Enroll Athlete</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline" style="width:100%;">
+                <span class="material-symbols-outlined">alternate_email</span>
+                <span>Contact Staff</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+          </a>
+          <p>
+            STACKLY Sports Academy is an internationally accredited athletic institution dedicated to athletic excellence, tactical mastery, and sports science innovation.
+          </p>
+          <div class="footer-social-list">
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 1"><span class="material-symbols-outlined">public</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 2"><span class="material-symbols-outlined">share</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 3"><span class="material-symbols-outlined">ondemand_video</span></a>
+            <a href="404.html" class="footer-social-btn" aria-label="Social Link 4"><span class="material-symbols-outlined">forum</span></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Home</a>
+            <a href="about.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>About Academy</a>
+            <a href="services.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>All Disciplines</a>
+            <a href="blog.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Sports Science Blog</a>
+            <a href="contact.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Contact Facilities</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Portals</h4>
+          <div class="footer-links-list">
+            <a href="login.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Athlete Login</a>
+            <a href="register.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Register New Athlete</a>
+            <a href="user-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>User Dashboard</a>
+            <a href="admin-dashboard.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Admin Dashboard</a>
+            <a href="404.html" class="footer-link"><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>Forgot Password</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Training Arena</h4>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <span>Olympic Boulevard 4500, Elite Stadium Complex, Arena Gate 4</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">call</span>
+            <span>+1 (800) 555-STACKLY</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <span>admissions@stacklyacademy.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY Sports Academy. All rights reserved.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="404.html" style="color:var(--text-muted);">Privacy Policy</a>
+          <a href="404.html" style="color:var(--text-muted);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

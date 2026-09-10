@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Out of Bounds | STACKLY Sports Academy</title>
+  <meta name="description" content="Offside! The requested tactical page, drill session, or athlete profile is out of bounds.">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body style="min-height:100vh; display:flex; flex-direction:column; background:radial-gradient(ellipse at 50% 10%, rgba(198,255,0,0.08) 0%, transparent 65%), var(--bg-dark);">
+
+  <!-- Top Header Navigation -->
+  <header style="padding:1.5rem 2rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border-color); background:var(--bg-surface);">
+    <a href="index.html" class="nav-logo">
+      <img src="./images/logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img">
+    </a>
+
+    <a href="index.html" class="btn btn-outline btn-sm" style="display:inline-flex; align-items:center; gap:0.5rem;">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span>Back To Home</span>
+    </a>
+  </header>
+
+  <!-- Main 404 Sports Academy Container -->
+  <main style="flex-grow:1; display:flex; align-items:center; justify-content:center; padding:3rem 1.5rem;">
+    <div style="width:100%; max-width:820px; text-align:center;">
+
+      <!-- Premium Sports Academy Animation Hero Canvas -->
+      <div class="sports-404-hero">
+        <!-- Stadium Floodlights -->
+        <div class="stadium-floodlights">
+          <div class="floodlight-rig">
+            <div class="floodlight-bank">
+              <div class="floodlight-bulb"></div>
+              <div class="floodlight-bulb"></div>
+              <div class="floodlight-bulb"></div>
+            </div>
+            <div class="floodlight-mast"></div>
+          </div>
+
+          <div class="floodlight-rig">
+            <div class="floodlight-bank">
+              <div class="floodlight-bulb"></div>
+              <div class="floodlight-bulb"></div>
+              <div class="floodlight-bulb"></div>
+            </div>
+            <div class="floodlight-mast"></div>
+          </div>
+        </div>
+
+        <!-- Animated Athletic Stage -->
+        <div class="stadium-pitch-stage">
+          <!-- Bouncing Athletic Ball -->
+          <div class="athletic-ball-wrapper">
+            <div class="athletic-ball">
+              <span class="material-symbols-outlined">sports_soccer</span>
+            </div>
+            <div class="athletic-ball-shadow"></div>
+          </div>
+
+          <!-- Referee Penalty Cards -->
+          <div class="referee-card-group">
+            <div class="referee-card yellow" title="Caution"></div>
+            <div class="referee-card red" title="Sent Off"></div>
+          </div>
+        </div>
+
+        <!-- Stadium Pitch Turf Line -->
+        <div class="stadium-pitch-turf">
+          <div class="turf-penalty-arc"></div>
+        </div>
+      </div>
+
+      <!-- Error Message Content -->
+      <div style="margin-top:1rem;">
+        <div class="section-tag" style="margin-bottom:0.75rem;">REFEREE WHISTLE: PLAY TERMINATED</div>
+        <h1 style="font-family:var(--font-heading); font-size:clamp(3.5rem, 8vw, 6.5rem); color:var(--accent-volt); line-height:0.95; letter-spacing:2px; margin-bottom:0.5rem;">
+          404 ERROR
+        </h1>
+        <h2 style="font-family:var(--font-heading); font-size:clamp(1.5rem, 4vw, 2.4rem); color:var(--text-pure); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;">
+          OUT OF <span>BOUNDS</span>
+        </h2>
+        <p style="color:var(--text-secondary); max-width:580px; margin:0 auto 2.5rem; font-size:1rem; line-height:1.6;">
+          The tactical drill, tournament bracket, or athlete roster you are searching for has crossed the sideline or does not exist in the STACKLY Academy database. The session may have concluded or the tactical playbook has been updated.
+        </p>
+
+        <!-- Navigation Action Buttons -->
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-primary" style="padding:0.85rem 2rem; display:inline-flex; align-items:center; gap:0.5rem;">
+            <span class="material-symbols-outlined">home</span>
+            <span>Back To Home</span>
+          </a>
+
+          <button onclick="history.back()" class="btn btn-outline" style="padding:0.85rem 2rem; display:inline-flex; align-items:center; gap:0.5rem;" type="button">
+            <span class="material-symbols-outlined">undo</span>
+            <span>Go Back</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding:1.5rem; text-align:center; font-size:0.85rem; color:var(--text-muted); border-top:1px solid var(--border-color); background:var(--bg-surface);">
+    &copy; 2026 STACKLY Sports Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>
