@@ -3,6 +3,19 @@
    Supports User & Admin Dashboards, Persistent Synchronization, Responsive Tables
    ========================================================================== */
 
+   .field-error {
+  display: none;
+  color: #ff4d4f;
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+}
+
+.form-control.input-error,
+.form-select.input-error {
+  border-color: #ff4d4f;
+}
+
+
 .dashboard-body {
   display: flex;
   min-height: 100vh;

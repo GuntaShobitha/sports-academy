@@ -312,28 +312,37 @@ function initSettingsForm(currentUser) {
    ========================================================================== */
 function initLogout() {
   function performLogout(e) {
-    if (e) e.preventDefault();
-    if (e) e.stopPropagation();
-    // Remove only session data
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Remove session data from localStorage
     localStorage.removeItem(STORAGE_CURRENT_USER_KEY);
+    
+    // Show logout message and redirect
     showToast('Logging out...', 'info');
     setTimeout(() => {
       window.location.href = 'login.html';
     }, 500);
   }
 
-  // Primary: class-based selectors
-  const logoutButtons = document.querySelectorAll('.dash-logout-btn, .logout-action, [data-action="logout"], .dash-topbar-logout');
+  // Primary: class-based selectors - look for ALL logout buttons
+  const logoutButtons = document.querySelectorAll('.dash-logout-btn');
+  
   logoutButtons.forEach(btn => {
-    btn.addEventListener('click', performLogout);
+    // Remove any existing listeners by cloning
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+    newBtn.addEventListener('click', performLogout);
   });
 
-  // Fallback: find by icon content (logout icon)
+  // If no buttons found by class, try fallback by icon content
   if (logoutButtons.length === 0) {
     document.querySelectorAll('button').forEach(btn => {
       const icon = btn.querySelector('.material-symbols-outlined');
       if (icon && icon.textContent.trim() === 'logout') {
-        btn.addEventListener('click', performLogout);
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.addEventListener('click', performLogout);
       }
     });
   }
@@ -563,7 +572,7 @@ function initBookingsTable(currentUser) {
           <td>${item.date} (${item.time})</td>
           <td><span class="status-badge ${statusClass}">${item.status}</span></td>
           <td>
-            <button class="btn btn-outline btn-sm view-pass-btn" data-id="${item.id}" style="padding:0.25rem 0.6rem; font-size:0.75rem;">
+            <button class="btn btn-outline btn-sm" onclick="window.location.href='./404.html'"   data-id="${item.id}" style="padding:0.25rem 0.6rem; font-size:0.75rem;">
               View Pass
             </button>
           </td>
@@ -585,7 +594,7 @@ function initBookingsTable(currentUser) {
                 Pass
               </button>
               ${item.status === 'Confirmed' ? `
-                <button class="btn btn-outline btn-sm cancel-booking-btn" data-id="${item.id}" style="padding:0.25rem 0.6rem; font-size:0.75rem; border-color:rgba(239,68,68,0.3); color:var(--accent-red);">
+                <button class="btn btn-outline btn-sm" onclick="window.location.href='./404.html'" data-id="${item.id}" style="padding:0.25rem 0.6rem; font-size:0.75rem; border-color:rgba(239,68,68,0.3); color:var(--accent-red);">
                   Cancel
                 </button>
               ` : ''}
@@ -765,7 +774,7 @@ function initAdminUsers() {
         <td><span class="dash-user-role-badge ${roleBadgeClass}">${user.role.toUpperCase()}</span></td>
         <td><span class="status-badge active">Active</span></td>
         <td>
-          <button class="btn btn-outline btn-sm delete-user-btn" data-index="${index}" style="padding:0.25rem 0.55rem; font-size:0.75rem; color:var(--accent-red); border-color:rgba(239,68,68,0.3);">
+          <button class="btn btn-outline btn-sm" onclick="window.location.href='./404.html'" data-index="${index}" style="padding:0.25rem 0.55rem; font-size:0.75rem; color:var(--accent-red); border-color:rgba(239,68,68,0.3);">
             Delete
           </button>
         </td>
@@ -862,7 +871,7 @@ function initAdminEvents() {
         <td><span style="font-size:0.85rem; font-weight:700;">${evt.capacity}</span></td>
         <td><span class="status-badge ${evt.status === 'Live' ? 'ontime' : 'confirmed'}">${evt.status}</span></td>
         <td>
-          <button class="btn btn-outline btn-sm delete-event-btn" data-index="${idx}" style="padding:0.25rem 0.55rem; font-size:0.75rem; color:var(--accent-red); border-color:rgba(239,68,68,0.3);">
+          <button class="btn btn-outline btn-sm" onclick="window.location.href='./404.html'" data-index="${idx}" style="padding:0.25rem 0.55rem; font-size:0.75rem; color:var(--accent-red); border-color:rgba(239,68,68,0.3);">
             Cancel
           </button>
         </td>
@@ -1056,4 +1065,116 @@ function showToast(message, type = 'info') {
     toast.style.transition = 'all 0.3s ease';
     setTimeout(() => toast.remove(), 300);
   }, 4000);
+}
+
+
+
+const broadcastForm = document.getElementById("broadcastForm");
+
+const broadcastTitle = document.getElementById("broadcastTitle");
+const broadcastAudience = document.getElementById("broadcastAudience");
+const broadcastPriority = document.getElementById("broadcastPriority");
+const broadcastMessage = document.getElementById("broadcastMessage");
+
+const broadcastTitleError = document.getElementById("broadcastTitleError");
+const broadcastAudienceError = document.getElementById("broadcastAudienceError");
+const broadcastPriorityError = document.getElementById("broadcastPriorityError");
+const broadcastMessageError = document.getElementById("broadcastMessageError");
+
+
+broadcastForm.addEventListener("submit", function (event) {
+
+  // Stop normal form submission
+  event.preventDefault();
+
+  let isValid = true;
+
+
+  // Clear previous errors
+  clearError(broadcastTitle, broadcastTitleError);
+  clearError(broadcastAudience, broadcastAudienceError);
+  clearError(broadcastPriority, broadcastPriorityError);
+  clearError(broadcastMessage, broadcastMessageError);
+
+
+  // Announcement Title
+  if (broadcastTitle.value.trim() === "") {
+
+    showError(
+      broadcastTitle,
+      broadcastTitleError,
+      "Please enter an announcement title."
+    );
+
+    isValid = false;
+  }
+
+
+  // Target Audience
+  if (broadcastAudience.value === "") {
+
+    showError(
+      broadcastAudience,
+      broadcastAudienceError,
+      "Please select a target audience."
+    );
+
+    isValid = false;
+  }
+
+
+  // Alert Priority
+  if (broadcastPriority.value === "") {
+
+    showError(
+      broadcastPriority,
+      broadcastPriorityError,
+      "Please select alert priority."
+    );
+
+    isValid = false;
+  }
+
+
+  // Message
+  if (broadcastMessage.value.trim() === "") {
+
+    showError(
+      broadcastMessage,
+      broadcastMessageError,
+      "Please enter the message content."
+    );
+
+    isValid = false;
+  }
+
+
+  // Stop here if validation failed
+  if (!isValid) {
+    return;
+  }
+
+
+  // Success
+  window.location.href='./404.html'
+
+  broadcastForm.reset();
+});
+
+
+function showError(input, errorElement, message) {
+
+  errorElement.textContent = message;
+  errorElement.style.display = "block";
+
+  input.classList.add("input-error");
+}
+
+
+function clearError(input, errorElement) {
+
+  errorElement.textContent = "";
+  errorElement.style.display = "none";
+
+  input.classList.remove("input-error");
 }
