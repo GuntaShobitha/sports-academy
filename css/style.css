@@ -387,7 +387,7 @@ ul, ol {
 .nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #fff;
   position: relative;
   padding: 0.5rem 0;
   text-transform: uppercase;
@@ -970,12 +970,33 @@ ul, ol {
   padding: 0.8rem 1rem;
   border-radius: var(--radius-md);
   font-size: 0.95rem;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .form-control:focus, .form-select:focus {
   border-color: var(--accent-volt);
   box-shadow: 0 0 0 2px var(--accent-volt-glow);
+}
+
+.form-control.input-error,
+.form-select.input-error {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.form-control.input-error:focus,
+.form-select.input-error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.field-error-msg {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: #ef4444;
+  font-weight: 500;
+  min-height: 1rem;
 }
 
 .form-select option {

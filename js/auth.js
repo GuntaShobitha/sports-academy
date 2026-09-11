@@ -194,9 +194,9 @@ function initRegisterForm() {
 
     setTimeout(() => {
       if (role === 'admin') {
-        window.location.href = 'admin-dashboard.html';
+        window.location.href = './login.html';
       } else {
-        window.location.href = 'user-dashboard.html';
+        window.location.href = './login.html';
       }
     }, 1000);
   });
