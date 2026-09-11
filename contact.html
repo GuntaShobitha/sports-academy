@@ -636,15 +636,24 @@ Salem, Tamil Nadu 636008
       }
     });
   </script>
-  <script>
+  <!-- FAQ accordion is handled by js/main.js (initAccordions) — do NOT add a second
+       click handler here, duplicate handlers double-toggle and the FAQ never opens. -->
+
+       <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const faqItems = document.querySelectorAll(".accordion-item");
+    const faqItems = document.querySelectorAll(".faq-stack .accordion-item");
 
     faqItems.forEach(function (item) {
 
         const header = item.querySelector(".accordion-header");
+        const content = item.querySelector(".accordion-content");
         const icon = item.querySelector(".accordion-icon");
+
+        if (!header || !content) return;
+
+        // Initially hide answer
+        content.style.setProperty("display", "none", "important");
 
         header.addEventListener("click", function () {
 
@@ -652,18 +661,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Close all FAQ items
             faqItems.forEach(function (faq) {
+
                 faq.classList.remove("active");
 
+                const faqContent = faq.querySelector(".accordion-content");
                 const faqIcon = faq.querySelector(".accordion-icon");
+
+                if (faqContent) {
+                    faqContent.style.setProperty("display", "none", "important");
+                }
 
                 if (faqIcon) {
                     faqIcon.textContent = "expand_more";
                 }
             });
 
-            // Open clicked item if it was closed
+            // Open clicked FAQ
             if (!isOpen) {
+
                 item.classList.add("active");
+
+                content.style.setProperty("display", "block", "important");
 
                 if (icon) {
                     icon.textContent = "expand_less";

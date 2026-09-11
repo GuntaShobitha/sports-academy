@@ -491,31 +491,31 @@ function initStatCounters() {
 }
 
 /* --- Accordions --- */
-function initAccordions() {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.parentElement;
-      const isOpen = item.classList.contains('active');
+// function initAccordions() {
+//   const accordionHeaders = document.querySelectorAll('.accordion-header');
+//   accordionHeaders.forEach(header => {
+//     header.addEventListener('click', () => {
+//       const item = header.parentElement;
+//       const isOpen = item.classList.contains('active');
 
-      // Close other accordions in the same group
-      const parentGroup = item.parentElement;
-      if (parentGroup) {
-        parentGroup.querySelectorAll('.accordion-item').forEach(other => {
-          other.classList.remove('active');
-          const icon = other.querySelector('.accordion-icon');
-          if (icon) icon.textContent = 'expand_more';
-        });
-      }
+//       // Close other accordions in the same group
+//       const parentGroup = item.parentElement;
+//       if (parentGroup) {
+//         parentGroup.querySelectorAll('.accordion-item').forEach(other => {
+//           other.classList.remove('active');
+//           const icon = other.querySelector('.accordion-icon');
+//           if (icon) icon.textContent = 'expand_more';
+//         });
+//       }
 
-      if (!isOpen) {
-        item.classList.add('active');
-        const icon = header.querySelector('.accordion-icon');
-        if (icon) icon.textContent = 'expand_less';
-      }
-    });
-  });
-}
+//       if (!isOpen) {
+//         item.classList.add('active');
+//         const icon = header.querySelector('.accordion-icon');
+//         if (icon) icon.textContent = 'expand_less';
+//       }
+//     });
+//   });
+// }
 
 /* --- Training Slot Search --- */
 function initSlotSearch() {
