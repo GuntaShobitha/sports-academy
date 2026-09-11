@@ -4,19 +4,18 @@
  *
  * Architecture:
  *   - One <section class="experience"> contains a tall .exp-track with a
- *     sticky .browser-frame. Inside the frame, 4 absolutely-stacked .scene
+ *     sticky .browser-frame. Inside the frame, 3 absolutely-stacked .scene
  *     layers are driven by a per-scene progress variable (--p, 0 → 1).
  *   - A single requestAnimationFrame loop reads scroll position (never in
  *     the scroll event), computes each scene's progress and writes CSS
  *     custom properties only — CSS performs all transforms/opacity math.
- *   - State flow: hero → properties → services → active-project → finale.
+ *   - State flow: hero → properties → finale.
  *
  * Segment map (share of total track scroll):
  *   0.00–0.05  hold on hero (static beat)
- *   0.05–0.27  scene 1  hero          (image push-in, type splits out)
- *   0.27–0.50  scene 2  properties    (clip wipe in, words rise, cards fly)
- *   0.50–0.73  scene 3  services      (door clip open, rows stagger in)
- *   0.73–1.00  scene 4  finale        (image settles, floating cards pop)
+ *   0.05–0.30  scene 1  hero          (image push-in, type splits out)
+ *   0.30–0.57  scene 2  properties    (clip wipe in, words rise, cards fly)
+ *   0.57–1.00  scene 3  finale        (image settles, floating cards pop)
  */
 (function () {
   'use strict';
@@ -24,10 +23,9 @@
   /* ----------------------------- configuration ---------------------------- */
 
   const SEGMENTS = [
-    { key: 'hero',       el: null, selector: '.scene-hero',       a: 0.05, b: 0.27 },
-    { key: 'properties', el: null, selector: '.scene-properties', a: 0.27, b: 0.50 },
-    { key: 'services',   el: null, selector: '.scene-services',   a: 0.50, b: 0.73 },
-    { key: 'finale',     el: null, selector: '.scene-finale',     a: 0.73, b: 1.00 }
+    { key: 'hero',       el: null, selector: '.scene-hero',       a: 0.05, b: 0.30 },
+    { key: 'properties', el: null, selector: '.scene-properties', a: 0.30, b: 0.57 },
+    { key: 'finale',     el: null, selector: '.scene-finale',     a: 0.57, b: 1.00 }
   ];
 
   const VISIBILITY_PAD = 0.08;   // keep a scene alive slightly beyond its segment
@@ -37,23 +35,20 @@
 
   /* --------------------------------- state -------------------------------- */
 
-  let section, track, stage, rowsWrap;
-  let rows = [];
+  let section, track, stage;
   let trackTop = 0;
   let trackH = 1;
   let vh = window.innerHeight;
 
   let pageProgress = 0;              // 0 → 1 through the whole track
-  let activeProject = -1;
   let isReducedMotion = false;
   let isFinePointer = false;
   let loopRunning = false;
   let sectionOnScreen = true;
 
   // smoothed values (lerped every frame to avoid scroll-jerk)
-  const sceneCurrent = [0, 0, 0, 0];
+  const sceneCurrent = [0, 0, 0];
   const pointer = { tx: 0, ty: 0, x: 0, y: 0 };       // -1 → 1 (stage parallax)
-  const preview  = { tx: 0, ty: 0, x: 0, y: 0, init: false }; // px (row preview)
 
   /* ------------------------------- utilities ------------------------------ */
 
@@ -94,40 +89,6 @@
     }
   }
 
-  /* --------------------------- services hover UI -------------------------- */
-
-  /** Mark one project row active; others recede via CSS (.has-active). */
-  function setActiveProject(index) {
-    if (index === activeProject) return;
-    activeProject = index;
-    rows.forEach((row, i) => row.classList.toggle('is-active', i === index));
-    if (rowsWrap) {
-      rowsWrap.classList.toggle('has-active', index >= 0);
-      // pan the preview image inside its mask, one step per project
-      rowsWrap.style.setProperty('--mi', String(index * -10));
-    }
-  }
-
-  function initProjectHover() {
-    if (!rowsWrap || !rows.length) return;
-
-    rows.forEach((row, i) => {
-      row.addEventListener('pointerenter', () => setActiveProject(i));
-      row.addEventListener('focus', () => setActiveProject(i));
-    });
-    rowsWrap.addEventListener('pointerleave', () => setActiveProject(-1));
-
-    // preview image follows the pointer — targets are lerped in the rAF loop
-    if (isFinePointer) {
-      rowsWrap.addEventListener('pointermove', (e) => {
-        const r = rowsWrap.getBoundingClientRect();
-        preview.tx = e.clientX - r.left;
-        preview.ty = e.clientY - r.top;
-        preview.init = true;
-      });
-    }
-  }
-
   /* --------------------------- pointer parallax --------------------------- */
 
   /** Writes smoothed --px/--py on the stage; CSS applies depth by --depth. */
@@ -136,14 +97,6 @@
     pointer.y = lerp(pointer.y, pointer.ty, 0.06);
     stage.style.setProperty('--px', pointer.x.toFixed(4));
     stage.style.setProperty('--py', pointer.y.toFixed(4));
-
-    if (preview.init) {
-      preview.x = lerp(preview.x, preview.tx, 0.14);
-      preview.y = lerp(preview.y, preview.ty, 0.14);
-      rowsWrap.style.setProperty('--mx', preview.x.toFixed(1));
-      rowsWrap.style.setProperty('--my', preview.y.toFixed(1));
-    }
-  }
 
   function initPointerParallax() {
     if (!isFinePointer) return;
@@ -212,13 +165,10 @@
 
     track = section.querySelector('.exp-track');
     stage = section.querySelector('.exp-stage');
-    rowsWrap = section.querySelector('.exp-rows');
-    rows = Array.from(section.querySelectorAll('.exp-row'));
 
     SEGMENTS.forEach(s => { s.el = section.querySelector(s.selector); });
     if (!track || !stage || SEGMENTS.some(s => !s.el)) return;
 
-    initProjectHover();
     initPointerParallax();
 
     // wake/sleep the rAF loop only while the experience is near the viewport
