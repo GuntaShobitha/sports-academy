@@ -545,6 +545,7 @@
   align-items: flex-end;
   gap: 1.5rem;
   padding-top: 2rem;
+  overflow-x: auto;
   border-bottom: 1px solid var(--border-color);
   position: relative;
 }
@@ -596,6 +597,11 @@
 @media (max-width: 991px) {
   .dash-sidebar {
     transform: translateX(-100%);
+  }
+
+  .adjustment{
+    padding: 10px 30px !important;
+    font-size: 9px !important;
   }
 
   .dash-sidebar.open {
