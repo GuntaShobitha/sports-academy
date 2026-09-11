@@ -1,103 +1,104 @@
 /**
- * STACKLY — CINEMATIC SCROLL EXPERIENCE ENGINE
- * Vanilla JS. No libraries.
- *
- * Architecture:
- *   - One <section class="experience"> contains a tall .exp-track with a
- *     sticky .browser-frame. Inside the frame, 3 absolutely-stacked .scene
- *     layers are driven by a per-scene progress variable (--p, 0 → 1).
- *   - A single requestAnimationFrame loop reads scroll position (never in
- *     the scroll event), computes each scene's progress and writes CSS
- *     custom properties only — CSS performs all transforms/opacity math.
- *   - State flow: hero → properties → finale.
- *
- * Segment map (share of total track scroll):
- *   0.00–0.05  hold on hero (static beat)
- *   0.05–0.30  scene 1  hero          (image push-in, type splits out)
- *   0.30–0.57  scene 2  properties    (clip wipe in, words rise, cards fly)
- *   0.57–1.00  scene 3  finale        (image settles, floating cards pop)
- */
+* STACKLY — CINEMATIC SCROLL EXPERIENCE ENGINE
+* Vanilla JS. No libraries.
+*
+* Architecture:
+*   - One <section class="experience"> contains a tall .exp-track with a
+*     sticky .browser-frame. Inside the frame, 3 absolutely-stacked .scene
+*     layers are driven by a per-scene progress variable (--p, 0 → 1).
+*   - A single requestAnimationFrame loop reads scroll position (never in
+*     the scroll event), computes each scene's progress and writes CSS
+*     custom properties only — CSS performs all transforms/opacity math.
+*   - State flow: hero → properties → finale.
+*
+* Segment map (share of total track scroll):
+*   0.00–0.05  hold on hero (static beat)
+*   0.05–0.30  scene 1  hero          (image push-in, type splits out)
+*   0.30–0.57  scene 2  properties    (clip wipe in, words rise, cards fly)
+*   0.57–1.00  scene 3  finale        (image settles, floating cards pop)
+*/
 (function () {
   'use strict';
-
+ 
   /* ----------------------------- configuration ---------------------------- */
-
+ 
   const SEGMENTS = [
     { key: 'hero',       el: null, selector: '.scene-hero',       a: 0.05, b: 0.30 },
     { key: 'properties', el: null, selector: '.scene-properties', a: 0.30, b: 0.57 },
     { key: 'finale',     el: null, selector: '.scene-finale',     a: 0.57, b: 1.00 }
   ];
-
+ 
   const VISIBILITY_PAD = 0.08;   // keep a scene alive slightly beyond its segment
   const EASE_INOUT     = t => t * t * (3 - 2 * t);            // smoothstep
   const clamp01        = v => Math.min(1, Math.max(0, v));
   const lerp           = (a, b, t) => a + (b - a) * t;
-
+ 
   /* --------------------------------- state -------------------------------- */
-
+ 
   let section, track, stage;
   let trackTop = 0;
   let trackH = 1;
   let vh = window.innerHeight;
-
+ 
   let pageProgress = 0;              // 0 → 1 through the whole track
   let isReducedMotion = false;
   let isFinePointer = false;
   let loopRunning = false;
   let sectionOnScreen = true;
-
+ 
   // smoothed values (lerped every frame to avoid scroll-jerk)
   const sceneCurrent = [0, 0, 0];
   const pointer = { tx: 0, ty: 0, x: 0, y: 0 };       // -1 → 1 (stage parallax)
-
+ 
   /* ------------------------------- utilities ------------------------------ */
-
+ 
   function measure() {
     vh = window.innerHeight;
     const rect = track.getBoundingClientRect();
     trackTop = rect.top + window.scrollY;
     trackH = Math.max(1, rect.height - vh);
   }
-
+ 
   function getScrollProgress() {
     const raw = (window.scrollY - trackTop) / trackH;
     return clamp01(raw);
   }
-
+ 
   /* Local progress of a scene segment, eased with smoothstep. */
   function sceneProgress(seg) {
     return EASE_INOUT(clamp01((pageProgress - seg.a) / (seg.b - seg.a)));
   }
-
+ 
   /* ------------------------- scene progress engine ------------------------ */
-
+ 
   /** Compute + write --p per scene, toggle .is-visible windows. */
   function updateSceneProgress() {
     for (let i = 0; i < SEGMENTS.length; i++) {
       const seg = SEGMENTS[i];
       const target = sceneProgress(seg);
-
+ 
       // critical damping toward the target keeps motion buttery on fast scrolls
       sceneCurrent[i] = Math.abs(target - sceneCurrent[i]) < 0.0005
         ? target
         : lerp(sceneCurrent[i], target, 0.16);
-
+ 
       seg.el.style.setProperty('--p', sceneCurrent[i].toFixed(4));
-
+ 
       const visible = pageProgress > seg.a - VISIBILITY_PAD && pageProgress < seg.b + VISIBILITY_PAD;
       seg.el.classList.toggle('is-visible', visible);
     }
   }
-
+ 
   /* --------------------------- pointer parallax --------------------------- */
-
+ 
   /** Writes smoothed --px/--py on the stage; CSS applies depth by --depth. */
   function updateFloatingCards() {
     pointer.x = lerp(pointer.x, pointer.tx, 0.06);
     pointer.y = lerp(pointer.y, pointer.ty, 0.06);
     stage.style.setProperty('--px', pointer.x.toFixed(4));
     stage.style.setProperty('--py', pointer.y.toFixed(4));
-
+  }
+ 
   function initPointerParallax() {
     if (!isFinePointer) return;
     stage.addEventListener('pointermove', (e) => {
@@ -107,22 +108,22 @@
     });
     stage.addEventListener('pointerleave', () => { pointer.tx = 0; pointer.ty = 0; });
   }
-
+ 
   /* ------------------------------ scroll loop ----------------------------- */
-
+ 
   /** Main per-frame handler: progress, scenes, parallax. */
   function handleScroll() {
     pageProgress = getScrollProgress();
     updateSceneProgress();
     updateFloatingCards();
   }
-
+ 
   function tick() {
     if (!sectionOnScreen) { loopRunning = false; return; }  // sleep off-screen
     handleScroll();
     requestAnimationFrame(tick);
   }
-
+ 
   function wake() {
     const rect = section.getBoundingClientRect();
     sectionOnScreen = rect.bottom > -vh && rect.top < vh * 2;
@@ -131,16 +132,16 @@
       requestAnimationFrame(tick);
     }
   }
-
+ 
   /* --------------------------- responsive layout -------------------------- */
-
+ 
   /** Re-measure on breakpoint changes; drop decorative parallax on touch. */
   function handleResponsiveLayout() {
     isFinePointer = window.matchMedia('(pointer: fine)').matches;
     isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+ 
     measure();
-
+ 
     if (isReducedMotion) {
       // Static experience: pin the frame, hold the hero, kill the loop.
       track.style.height = '100vh';
@@ -156,26 +157,26 @@
       wake();
     }
   }
-
+ 
   /* --------------------------------- init --------------------------------- */
-
+ 
   function initScenes() {
     section = document.querySelector('.experience');
     if (!section) return;
-
+ 
     track = section.querySelector('.exp-track');
     stage = section.querySelector('.exp-stage');
-
+ 
     SEGMENTS.forEach(s => { s.el = section.querySelector(s.selector); });
     if (!track || !stage || SEGMENTS.some(s => !s.el)) return;
-
+ 
     initPointerParallax();
-
+ 
     // wake/sleep the rAF loop only while the experience is near the viewport
     window.addEventListener('scroll', wake, { passive: true });
     window.addEventListener('resize', handleResponsiveLayout);
     window.addEventListener('load', measure);
-
+ 
     // Deep-link support: index.html#exp-progress=0.6 jumps straight to a
     // point in the experience (also used for automated visual testing).
     const jumpToHash = () => {
@@ -189,13 +190,15 @@
     };
     jumpToHash();
     window.addEventListener('hashchange', jumpToHash);
-
+ 
     handleResponsiveLayout();
   }
-
+ 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initScenes);
   } else {
     initScenes();
   }
 })();
+ 
+ 
