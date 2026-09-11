@@ -893,6 +893,7 @@ ul, ol {
   white-space: nowrap;
   padding: 0.85rem 0;
   position: relative;
+  top: -80px;
 }
 
 .marquee-track {
@@ -3988,4 +3989,168 @@ html {
 .map-section:hover .map-address {
   background: #1e1e22;
   color: var(--gold-light);
+}
+
+
+
+
+
+
+
+
+
+.hero-section-blog {
+    position: relative;
+    width: 100%;
+    height: 520px;
+
+    background-image: url(../images/blog-hero-background.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.hero-section-blog::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* Keep your text/content above the overlay */
+.hero-section-blog > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.hero-section-services {
+    position: relative;
+    width: 100%;
+    height: 520px;
+
+    background-image: url(../images/services-background.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.hero-section-services::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* Keep your text/content above the overlay */
+.hero-section-services > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.hero-section-contact {
+ position: relative;
+    width: 100%;
+    height: 520px;
+
+    background-image: url(../images/contact-background.webp);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.hero-section-contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* Keep your text/content above the overlay */
+.hero-section-contact > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+/* ================================
+   FAQ ACCORDION
+================================ */
+
+.faq-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-stack .accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-stack .accordion-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-stack .accordion-header h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-pure);
+}
+
+.faq-stack .accordion-icon {
+    color: var(--accent-volt);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Answer hidden by default */
+.faq-stack .accordion-content {
+    display: none !important;
+    padding: 0 1.5rem 1.25rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Answer visible when active */
+.faq-stack .accordion-item.active .accordion-content {
+    display: block !important;
 }
