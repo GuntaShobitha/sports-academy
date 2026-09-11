@@ -85,6 +85,7 @@
   width: 100vw;
   aspect-ratio: 16 / 9.5;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.09);
@@ -560,7 +561,7 @@
 /* floating image preview — follows the pointer (JS feeds --mx/--my) */
 .exp-row-media {
   position: absolute;
-  left: 0;
+  left: 100px;
   top: 0;
   width: clamp(150px, 20vw, 280px);
   aspect-ratio: 4 / 3;
@@ -731,7 +732,7 @@
   .browser-frame {
     width: 94vw;
     aspect-ratio: auto;
-    height: min(78vh, 720px);
+    height: 100vh;
   }
   .exp-chrome { flex-basis: 32px; }
   .exp-chrome-url { padding: 3px 18px; font-size: 10px; }
