@@ -129,7 +129,7 @@ function checkAuth() {
 function syncProfiles(user) {
   const exactEmail = user.email; // Exact email intact
   const fullName = user.name;
-  const roleDisplay = (user.role === 'admin') ? 'HEAD COACH / ADMIN' : 'ATHLETE / MEMBER';
+  const roleDisplay = (user.role === 'admin') ? 'ADMIN' : 'MEMBER';
 
   // Sidebar profile targets
   const sidebarName = document.getElementById('sidebarUserName');
