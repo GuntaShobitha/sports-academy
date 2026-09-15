@@ -1149,7 +1149,11 @@ ul, ol {
   gap: 0.7rem;
 }
 
-/* --- Live Events & Fixtures (Section 5) --- */
+/* --- Live Events & Fixtures (Section 5) — semantic table layout ---
+   Column geometry mirrors the old grid (140px | 1fr | 140px | 1fr | 160px
+   with 2rem side padding on the first/last cells), so the visual output
+   is pixel-identical. On narrow screens the table scrolls horizontally
+   inside .fixtures-wrap instead of breaking. */
 .fixtures-wrap {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1157,16 +1161,53 @@ ul, ol {
   overflow: hidden;
 }
 
-.fixture-row {
-  display: grid;
-  grid-template-columns: 140px 1fr 140px 1fr 160px;
-  align-items: center;
-  padding: 1.25rem 2rem;
+.fixture-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* Column widths = old grid tracks + the 2rem (32px) cell padding
+   applied to first/last cells, so content widths stay identical. */
+.fixture-table col.c-time { width: 172px; }   /* 140px + 2rem left pad */
+.fixture-table col.c-score { width: 140px; }
+.fixture-table col.c-status { width: 192px; } /* 160px + 2rem right pad */
+
+.fixture-table thead th {
+  padding: 1rem 0;
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  background: rgba(198, 255, 0, 0.03);
   border-bottom: 1px solid var(--border-color);
+}
+
+.fixture-table thead th:first-child { padding-left: 2rem; }
+.fixture-table thead th:last-child { padding-right: 2rem; }
+.fixture-table thead th:nth-child(3) { text-align: center; }
+.fixture-table thead th:nth-child(4),
+.fixture-table thead th:nth-child(5) { text-align: right; }
+
+.fixture-row {
   transition: background var(--transition-fast);
 }
 
-.fixture-row:last-child {
+.fixture-table tbody td {
+  padding: 5px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fixture-table tbody td:first-child { padding-left: 2rem; }
+.fixture-table tbody td:last-child { padding-right: 2rem; }
+
+.fixture-table tbody tr:last-child td {
   border-bottom: none;
 }
 
@@ -1190,21 +1231,31 @@ ul, ol {
   color: var(--text-muted);
 }
 
-.fixture-team {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+/* Team cells: flex lives on the inner .fixture-team element (not the td)
+   so the table layout is respected; typography stays on the td so the
+   small-screen media queries that shrink .fixture-team still apply. */
+td.fixture-team {
+  display: table-cell;
+  width: 100%;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--text-pure);
 }
 
-.fixture-team.away {
+.fixture-team .fixture-team-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fixture-team.away .fixture-team-inner {
   justify-content: flex-end;
 }
 
 .fixture-score {
+  display: table-cell;
   text-align: center;
+  vertical-align: middle;
   font-family: var(--font-heading);
   font-size: 1.5rem;
   color: var(--accent-volt);

@@ -59,25 +59,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .fixture-row {
-    grid-template-columns: 1fr 100px 1fr;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .fixture-time {
-    grid-column: span 3;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px dashed var(--border-color);
-    padding-bottom: 0.5rem;
-  }
-
-  .fixture-status-pill {
-    grid-column: span 3;
-    justify-self: center;
-    margin-top: 0.5rem;
-  }
+  /* Fixtures are now a real <table> (.fixture-table): it keeps the same
+     desktop look and scrolls horizontally inside .fixtures-wrap on small
+     screens instead of stacking/breaking. */
 
   .cta-grid {
     grid-template-columns: 1fr;

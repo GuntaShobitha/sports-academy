@@ -672,88 +672,132 @@
         </div>
 
         <div class="fixtures-wrap reveal-init" style="overflow-x: auto;">
-          <!-- Fixture Row 1 -->
-          <div class="fixture-row">
-            <div class="fixture-time">
-              <span class="fixture-date">TODAY, 16:30</span>
-              <span class="fixture-arena">Arena A (Main Pitch)</span>
-            </div>
-            <div class="fixture-team">
-              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
-              <span>STACKLY U-19 ELITE</span>
-            </div>
-            <div class="fixture-score">2 - 1</div>
-            <div class="fixture-team away">
-              <span>METRO UNITED FC</span>
-              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
-            </div>
-            <div style="text-align:right;">
-              <span class="fixture-status-pill status-live">
-                <span class="material-symbols-outlined" style="font-size:14px;">radio_button_checked</span>
-                <span>LIVE 72'</span>
-              </span>
-            </div>
-          </div>
+          <table class="fixture-table">
+            <colgroup>
+              <col class="c-time">
+              <col>
+              <col class="c-score">
+              <col>
+              <col class="c-status">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">Date &amp; Venue</th>
+                <th scope="col">Home</th>
+                <th scope="col">Score</th>
+                <th scope="col">Away</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Fixture Row 1 -->
+              <tr class="fixture-row">
+                <td>
+                  <div class="fixture-time">
+                    <span class="fixture-date">TODAY, 16:30</span>
+                    <span class="fixture-arena">Arena A (Main Pitch)</span>
+                  </div>
+                </td>
+                <td class="fixture-team">
+                  <div class="fixture-team-inner">
+                    <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+                    <span>STACKLY U-19 ELITE</span>
+                  </div>
+                </td>
+                <td class="fixture-score">2 - 1</td>
+                <td class="fixture-team away">
+                  <div class="fixture-team-inner">
+                    <span>METRO UNITED FC</span>
+                    <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+                  </div>
+                </td>
+                <td style="text-align:right;">
+                  <span class="fixture-status-pill status-live">
+                    <span class="material-symbols-outlined" style="font-size:14px;">radio_button_checked</span>
+                    <span>LIVE 72'</span>
+                  </span>
+                </td>
+              </tr>
 
-          <!-- Fixture Row 2 -->
-          <div class="fixture-row">
-            <div class="fixture-time">
-              <span class="fixture-date">SEP 12, 18:00</span>
-              <span class="fixture-arena">Olympic Center</span>
-            </div>
-            <div class="fixture-team">
-              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
-              <span>STACKLY BASKETBALL</span>
-            </div>
-            <div class="fixture-score">VS</div>
-            <div class="fixture-team away">
-              <span>TITANS ACADEMY</span>
-              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
-            </div>
-            <div style="text-align:right;">
-              <span class="fixture-status-pill status-upcoming">UPCOMING</span>
-            </div>
-          </div>
+              <!-- Fixture Row 2 -->
+              <tr class="fixture-row">
+                <td>
+                  <div class="fixture-time">
+                    <span class="fixture-date">SEP 12, 18:00</span>
+                    <span class="fixture-arena">Olympic Center</span>
+                  </div>
+                </td>
+                <td class="fixture-team">
+                  <div class="fixture-team-inner">
+                    <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+                    <span>STACKLY BASKETBALL</span>
+                  </div>
+                </td>
+                <td class="fixture-score">VS</td>
+                <td class="fixture-team away">
+                  <div class="fixture-team-inner">
+                    <span>TITANS ACADEMY</span>
+                    <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+                  </div>
+                </td>
+                <td style="text-align:right;">
+                  <span class="fixture-status-pill status-upcoming">UPCOMING</span>
+                </td>
+              </tr>
 
-          <!-- Fixture Row 3 -->
-          <div class="fixture-row">
-            <div class="fixture-time">
-              <span class="fixture-date">SEP 14, 15:00</span>
-              <span class="fixture-arena">National Stadium</span>
-            </div>
-            <div class="fixture-team">
-              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
-              <span>STACKLY U-16 YOUTH</span>
-            </div>
-            <div class="fixture-score">4 - 0</div>
-            <div class="fixture-team away">
-              <span>VALLEY RANGERS</span>
-              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
-            </div>
-            <div style="text-align:right;">
-              <span class="fixture-status-pill status-completed">COMPLETED</span>
-            </div>
-          </div>
+              <!-- Fixture Row 3 -->
+              <tr class="fixture-row">
+                <td>
+                  <div class="fixture-time">
+                    <span class="fixture-date">SEP 14, 15:00</span>
+                    <span class="fixture-arena">National Stadium</span>
+                  </div>
+                </td>
+                <td class="fixture-team">
+                  <div class="fixture-team-inner">
+                    <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+                    <span>STACKLY U-16 YOUTH</span>
+                  </div>
+                </td>
+                <td class="fixture-score">4 - 0</td>
+                <td class="fixture-team away">
+                  <div class="fixture-team-inner">
+                    <span>VALLEY RANGERS</span>
+                    <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+                  </div>
+                </td>
+                <td style="text-align:right;">
+                  <span class="fixture-status-pill status-completed">COMPLETED</span>
+                </td>
+              </tr>
 
-          <!-- Fixture Row 4 -->
-          <div class="fixture-row">
-            <div class="fixture-time">
-              <span class="fixture-date">SEP 18, 19:30</span>
-              <span class="fixture-arena">Arena B (Floodlit Turf)</span>
-            </div>
-            <div class="fixture-team">
-              <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
-              <span>STACKLY SENIOR PRO</span>
-            </div>
-            <div class="fixture-score">VS</div>
-            <div class="fixture-team away">
-              <span>APEX ATHLETIC FC</span>
-              <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
-            </div>
-            <div style="text-align:right;">
-              <span class="fixture-status-pill status-upcoming">UPCOMING</span>
-            </div>
-          </div>
+              <!-- Fixture Row 4 -->
+              <tr class="fixture-row">
+                <td>
+                  <div class="fixture-time">
+                    <span class="fixture-date">SEP 18, 19:30</span>
+                    <span class="fixture-arena">Arena B (Floodlit Turf)</span>
+                  </div>
+                </td>
+                <td class="fixture-team">
+                  <div class="fixture-team-inner">
+                    <span class="material-symbols-outlined" style="color:var(--accent-volt);">shield</span>
+                    <span>STACKLY SENIOR PRO</span>
+                  </div>
+                </td>
+                <td class="fixture-score">VS</td>
+                <td class="fixture-team away">
+                  <div class="fixture-team-inner">
+                    <span>APEX ATHLETIC FC</span>
+                    <span class="material-symbols-outlined" style="color:var(--text-secondary);">shield</span>
+                  </div>
+                </td>
+                <td style="text-align:right;">
+                  <span class="fixture-status-pill status-upcoming">UPCOMING</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
