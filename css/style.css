@@ -58,6 +58,11 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   overscroll-behavior: none;
+  /* Root-level horizontal overflow guard: page-load entrance animations
+     (scale/translate on cards, marquee, widgets) briefly paint past the
+     viewport edge. Body-level overflow-x: hidden alone does not clip
+     viewport-anchored absolute elements, so clamp at the root too. */
+  overflow-x: hidden;
 }
 
 body {
@@ -68,6 +73,14 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+}
+
+/* Horizontal overflow shield for page content: `clip` (not `hidden`) so it
+   never creates a scroll container and keeps position: sticky working.
+   Animations are untouched — only what paints beyond the viewport edge
+   during their entrance is clipped. */
+main {
+  overflow-x: clip;
 }
 
 body.menu-open {
@@ -3979,7 +3992,7 @@ html {
 .map-address {
   width: 100%; min-height: 31px; display: flex; align-items: center; justify-content: center;
   padding: 7px 20px; background: #29292e; color: #eee; font-family: var(--sans);
-  font-size: 8px; line-height: 1.3; text-align: center; border-radius: 0 0 6px 6px; position: relative; z-index: 2;
+  font-size: 11px; line-height: 1.3; text-align: center; border-radius: 0 0 6px 6px; position: relative; z-index: 2;
 }
 .map-container { width: 100%; height: 390px; overflow: hidden; background: #e8e6df; }
 .map-container iframe { width: 100%; height: 100%; display: block; border: 0; }
